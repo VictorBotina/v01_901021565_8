@@ -145,7 +145,23 @@ export default function CuidadoSaludLandingPage() {
                 </CardDescription>
               </CardHeader>
               <CardContent className="space-y-4">
-                 <div className="flex justify-center">
+                 <Link
+                  href="/afiliados/subsidiado/salud/programas/artritis"
+                  className="group flex items-start gap-4 p-4 rounded-lg hover:bg-muted/50 transition-colors"
+                >
+                  <div className="p-3 bg-primary/10 rounded-full group-hover:bg-primary group-hover:text-primary-foreground">
+                    <Stethoscope className="h-6 w-6 text-primary group-hover:text-primary-foreground" />
+                  </div>
+                  <div>
+                    <h4 className="font-semibold text-foreground">
+                      Artritis
+                    </h4>
+                    <p className="text-sm text-muted-foreground">
+                      Información y recursos de nuestro programa de acompañamiento.
+                    </p>
+                  </div>
+                </Link>
+                <div className="flex justify-center pt-4">
                     <Button asChild>
                         <Link href="/afiliados/subsidiado/salud/programas">Ampliar información</Link>
                     </Button>
