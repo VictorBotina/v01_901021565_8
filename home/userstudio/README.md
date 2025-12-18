@@ -75,3 +75,10 @@ La estructura del proyecto sigue las convenciones de Next.js App Router para una
 ### Accesibilidad
 
 La aplicación incluye funcionalidades de accesibilidad como cambio de tema (claro/oscuro), modo de alto contraste y ajuste del tamaño de fuente. La lógica principal se encuentra en los componentes dentro de `src/components/layout/header`.
+
+### Estrategia de Contenidos con Strapi (CMS Headless)
+
+- **Propósito:** Strapi se utiliza como un **CMS Headless** para gestionar contenido dinámico que puede necesitar actualizaciones frecuentes sin requerir cambios en el código. Esto incluye artículos del blog, comunicados de prensa, datos para pop-ups, entre otros.
+- **Desacoplamiento:** Esta estrategia desacopla la gestión de contenido del desarrollo del frontend. Permite que editores o administradores de contenido puedan crear, actualizar y publicar información directamente desde el panel de Strapi.
+- **Conexión:** La lógica para comunicarse con la API de Strapi se centraliza en `src/lib/api.ts`. Este archivo contiene funciones (`fetchFromStrapi`) que manejan las solicitudes HTTP, la autenticación y el aplanamiento de la estructura de datos compleja que devuelve Strapi.
+- **Consumo de Datos:** Los Server Components (como las páginas del blog en `src/app/blog/...`) importan y utilizan las funciones de `src/lib/api.ts` y `src/app/services/articleService.ts` para obtener los datos del CMS durante el proceso de renderizado en el servidor.
