@@ -82,3 +82,41 @@ La aplicación incluye funcionalidades de accesibilidad como cambio de tema (cla
 - **Desacoplamiento:** Esta estrategia desacopla la gestión de contenido del desarrollo del frontend. Permite que editores o administradores de contenido puedan crear, actualizar y publicar información directamente desde el panel de Strapi.
 - **Conexión:** La lógica para comunicarse con la API de Strapi se centraliza en `src/lib/api.ts`. Este archivo contiene funciones (`fetchFromStrapi`) que manejan las solicitudes HTTP, la autenticación y el aplanamiento de la estructura de datos compleja que devuelve Strapi.
 - **Consumo de Datos:** Los Server Components (como las páginas del blog en `src/app/blog/...`) importan y utilizan las funciones de `src/lib/api.ts` y `src/app/services/articleService.ts` para obtener los datos del CMS durante el proceso de renderizado en el servidor.
+
+## 4. MVP – Producto Mínimo Viable
+
+**Objetivo principal:** Lanzar una versión funcional y estable del sitio que cubra las necesidades críticas de los usuarios sin generar impacto operativo negativo durante la transición.
+
+### Alcance del MVP
+
+El producto mínimo viable se centra en las siguientes características esenciales:
+
+- **Página de Inicio Institucional:** Una página de bienvenida (`/`) que presenta la entidad y dirige a los usuarios a las secciones principales.
+- **Secciones Críticas:**
+  - **Portal de Afiliados (`/afiliados`):** Punto de entrada para usuarios de los regímenes Subsidiado y Contributivo.
+  - **Servicios y Trámites (`/afiliados/subsidiado/informacion`, `/afiliados/subsidiado/tramites`):** Contenido prioritario sobre beneficios, derechos, deberes y guías de trámites.
+  - **Atención al Usuario:** Canales de atención y directorios de oficinas (`/afiliados/subsidiado/informacion/canales-de-atencion`).
+- **Navegación Completa:** El menú principal y el pie de página están completamente funcionales, enlazando a todas las secciones existentes y planificadas (aunque algunas páginas internas puedan ser contenido temporal).
+- **Contenidos Prioritarios:** El Blog (`/blog`) y sus categorías principales están activos, alimentados por el CMS (Strapi).
+- **Formularios Esenciales:** Funcionalidad para peticiones, quejas y reclamos (PQRS) y formularios de contacto.
+- **Fundamentos de SEO:**
+  - **URLs semánticas** y mapeo con la estructura del sitio anterior.
+  - **Metadatos básicos** (`title`, `description`) en las páginas principales.
+  - Gestión de redirecciones 301 para las rutas más importantes.
+
+### Fuera del Alcance del MVP
+
+Para agilizar el lanzamiento, las siguientes características se desarrollarán en fases posteriores:
+
+- **Funcionalidades Secundarias:** Páginas de contenido no prioritario, herramientas interactivas complejas o integraciones no esenciales.
+- **Optimizaciones Avanzadas:** Mejoras de rendimiento a nivel micro, optimización de imágenes avanzada (más allá de `next/image`).
+- **Rediseño Visual Completo:** El MVP utiliza la identidad visual definida, pero no incluye un rediseño exhaustivo de cada componente.
+
+### Criterios de Aprobación
+
+Para que el MVP sea considerado exitoso y listo para producción, debe cumplir con:
+
+- **Navegación Estable:** Todos los enlaces del menú principal y footer funcionan y dirigen al usuario al destino correcto sin errores `404`.
+- **Formularios Operativos:** Los formularios de PQRS y Contacto envían la información correctamente.
+- **Ausencia de Errores Críticos:** La aplicación funciona sin errores de JavaScript que impidan la interacción del usuario o la renderización de las páginas.
+- **Responsividad Básica:** El sitio es usable en dispositivos móviles y de escritorio.
