@@ -32,8 +32,9 @@ export async function generateStaticParams() {
 }
 
 // Genera los metadatos para la página del artículo
-export async function generateMetadata({ params }: { params: { slug: string } }): Promise<Metadata> {
-  const article = await getArticleBySlug(params.slug);
+export async function generateMetadata({ params }: { params: Promise<{ slug: string }> }): Promise<Metadata> {
+  const resolvedParams = await params;
+  const article = await getArticleBySlug(resolvedParams.slug);
 
   if (!article) {
     return {
@@ -147,8 +148,9 @@ function renderAuthorBio(bio: RichTextBlock[] | undefined) {
 }
 
 
-export default async function ArticlePage({ params }: { params: { slug: string } }) {
-  const article = await getArticleBySlug(params.slug);
+export default async function ArticlePage({ params }: { params: Promise<{ slug: string }> }) {
+  const resolvedParams = await params;
+  const article = await getArticleBySlug(resolvedParams.slug);
 
   if (!article) {
     notFound();

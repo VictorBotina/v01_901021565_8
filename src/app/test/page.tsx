@@ -1,10 +1,9 @@
 // src/app/test/page.tsx
-import { ArticleSection } from "@/components/articles/ArticleSection";
 import { InfoPopup } from "@/components/ui/popup";
 import { cookies } from 'next/headers';
 
 export default async function TestPage() {
-  const cookieStore = cookies();
+  const cookieStore = await cookies();
   const consentHandled = !!cookieStore.get('analytics_consent');
 
   return (
@@ -21,7 +20,6 @@ export default async function TestPage() {
           Esta página se usa para probar componentes. Aquí se muestra un popup de esquina.
         </p>
       </header>
-      <ArticleSection title="Artículos de Prueba" />
     </div>
   );
 }

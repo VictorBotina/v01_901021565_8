@@ -1,10 +1,9 @@
-
 export default function ArticuloPrestadores1() {
   return (
     <div className="container mx-auto px-4 py-8">
       <article className="prose lg:prose-xl mx-auto">
         <h1 className="text-4xl font-bold mb-4">Artículo de Prueba para Prestadores</h1>
-        <p className="text-muted-foreground">Publicado el {new Date().toLocaleDateString()}</p>
+        <p className="text-muted-foreground">Publicado el 24 de mayo de 2024</p>
         <div className="mt-8">
           <p>
             Contenido de un artículo de prueba dirigido a nuestra red de prestadores 
