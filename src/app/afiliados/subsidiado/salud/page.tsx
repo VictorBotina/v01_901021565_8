@@ -24,6 +24,7 @@ import {
   ShieldAlert,
   Syringe,
   Users,
+  Bug,
 } from "lucide-react";
 import { ArticleSection } from "@/components/articles/ArticleSection";
 import Link from "next/link";
@@ -350,6 +351,23 @@ export default function CuidadoSaludLandingPage() {
                     </h4>
                     <p className="text-sm text-muted-foreground">
                       Promovemos el bienestar integral a través de la alimentación balanceada y el ejercicio.
+                    </p>
+                  </div>
+                </Link>
+
+                <Link
+                  href="/afiliados/subsidiado/salud/programas/dengue"
+                  className="group flex items-start gap-4 p-4 rounded-lg hover:bg-muted/50 transition-colors"
+                >
+                  <div className="p-3 bg-primary/10 rounded-full group-hover:bg-primary group-hover:text-primary-foreground">
+                    <Bug className="h-6 w-6 text-primary group-hover:text-primary-foreground" />
+                  </div>
+                  <div>
+                    <h4 className="font-semibold text-foreground">
+                      Prevención del Dengue
+                    </h4>
+                    <p className="text-sm text-muted-foreground">
+                      Información sobre prevención, síntomas de alarma y control del mosquito.
                     </p>
                   </div>
                 </Link>
