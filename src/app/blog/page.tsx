@@ -1,5 +1,4 @@
 // src/app/blog/page.tsx
-//Ajuste tema
 import { format } from "date-fns";
 import { es } from "date-fns/locale";
 import Link from "next/link";
@@ -7,7 +6,8 @@ import { Logo } from "@/components/logo";
 import { ArrowRight } from "lucide-react";
 import Image from "next/image";
 import { ArticleCard } from "./ArticleCard";
-import { getArticles, formatDate } from "@/app/services/articleService";
+import { getArticles } from "@/app/services/articleService";
+import { formatDate } from "@/app/services/articleUtils";
 import { CATEGORIES } from "./data"; 
 import type { Article } from "@/app/types/article";
 import { getStrapiURL } from "@/lib/api";
@@ -35,7 +35,6 @@ const getArticleUrl = (article: Article): string => {
   if (categoryName && articleUrlMap[categoryName] && articleUrlMap[categoryName][article.title]) {
     return articleUrlMap[categoryName][article.title];
   }
-  // Fallback a la página de la categoría si no hay un mapeo específico
   const categoryInfo = CATEGORIES.find(c => c.name === categoryName);
   return categoryInfo?.href || '/blog';
 };
@@ -104,7 +103,7 @@ export default async function BlogPage() {
                            <div className="relative w-24 h-24 flex-shrink-0 overflow-hidden rounded-md bg-muted">
                               <Image
                                 src={getStrapiURL(imageUrl)}
-                                alt={`miniatura de ${'${article.title}'}`}
+                                alt={`miniatura de ${article.title}`}
                                 width={96}
                                 height={96}
                                 className="object-cover w-full h-full transition-transform duration-300 group-hover:scale-105"

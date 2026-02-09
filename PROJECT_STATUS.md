@@ -18,7 +18,8 @@ El sistema utiliza las versiones más recientes disponibles en el canal estable 
 - **serverExternalPackages**: Manejo mejorado de dependencias transitivas externas.
 
 ### Arquitectura de Datos
-- **Directiva `use cache`**: Aplicada globalmente a los servicios de Strapi (Artículos) y Supabase (Oficinas) mediante el servicio `officeService.ts`.
+- **Directiva `use cache`**: Aplicada globalmente a los servicios de Strapi (Artículos) y Supabase (Oficinas).
+- **Segregación de Servicios**: Resolución de errores de build mediante la separación de `articleUtils.ts` (cliente/servidor) y `articleService.ts` (exclusivo servidor con `use server`).
 - **Carga Optimizado**: Reducción del tiempo de respuesta mediante almacenamiento persistente en el servidor (Data Cache).
 
 ### Compatibilidad y Estabilidad
@@ -29,11 +30,11 @@ El sistema utiliza las versiones más recientes disponibles en el canal estable 
 
 1.  **Fase 1 (Preparación)**: Actualización a React 19.
 2.  **Fase 2 (Auditoría)**: Refactorización de componentes asíncronos (`cookies()`, `params`).
-3.  **Fase 3 (Migración de Next.js)**: Salto a la rama 16.1 utilizando el tag `latest` para asegurar compatibilidad con el registro de NPM.
-4.  **Fase 4 (Refactorización Avanzada)**: Implementación de caché avanzada para todos los servicios de datos.
+3.  **Fase 3 (Migración de Next.js)**: Salto a la rama 16.1 utilizando el tag `latest` para asegurar compatibilidad.
+4.  **Fase 4 (Refactorización Avanzada)**: Implementación de caché avanzada y corrección de límites cliente/servidor para `'use cache'`.
 
 ## 4. Conclusión
-El proyecto se encuentra en su estado más avanzado, cumpliendo con los estándares de Next.js 16.1. La infraestructura está lista para aprovechar el nuevo motor de compilación Turbopack y las herramientas de análisis de paquetes.
+El proyecto se encuentra en su estado más avanzado, cumpliendo con los estándares de Next.js 16.1. La infraestructura está blindada contra errores de compilación cruzada entre cliente y servidor.
 
 ---
-*Documento actualizado - 9 de febrero de 2026 (Migración a Next.js 16.1 Finalizada).*
+*Documento actualizado - 9 de febrero de 2026 (Corrección de 'use cache' Finalizada).*

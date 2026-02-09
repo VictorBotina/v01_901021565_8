@@ -4,7 +4,7 @@
 import Link from "next/link";
 import Image from "next/image";
 import { useState, useEffect } from "react";
-import { formatDate } from "@/app/services/articleService";
+import { formatDate } from "@/app/services/articleUtils";
 import { getStrapiURL } from "@/lib/api";
 import { Article } from "@/app/types/article";
 import { Skeleton } from "@/components/ui/skeleton";
@@ -50,7 +50,7 @@ export function ArticleCard({ article, href, featured = false }: ArticleCardProp
             onLoad={() => setImageLoading(false)}
             onError={() => {
               setImageLoading(false);
-              setImageUrl("/images/placeholder.png"); // Fallback image
+              setImageUrl("/images/placeholder.png");
             }}
             priority={featured}
           />
