@@ -1,34 +1,39 @@
-# Estado Actual del Proyecto - Finalizado
+# Estado Actual del Proyecto - Migración a Next.js 16.1
 
-Este documento certifica la finalización de la modernización del sistema y la migración exitosa a la rama estable más reciente.
+Este documento certifica que el sistema ha sido actualizado siguiendo la documentación oficial de la rama 16.
 
 ## 1. Versiones de Core y Entorno
-El sistema ha alcanzado su estado objetivo de vanguardia tecnológica utilizando versiones estables validadas en el registro de NPM.
+El sistema utiliza las versiones más recientes disponibles en el canal estable para habilitar las nuevas capacidades de Turbopack y optimización.
 
-- **Next.js:** `15.1.6` (Versión estable con soporte completo para `use cache`).
-- **React / React-DOM:** `19.0.0` (Arquitectura concurrente activa).
+- **Next.js:** `latest` (Rama 16.1 - Siguiendo documentación oficial).
+- **React / React-DOM:** `latest` (React 19+).
 - **TypeScript:** `^5.x`
 - **Node.js Recomendado:** `>=20.x`
 
 ## 2. Inventario de Mejoras Implementadas
 
-### Rendimiento y Caché
+### Rendimiento y Tooling (Next.js 16.1)
+- **Turbopack File System Caching**: Activado por defecto para mejorar los tiempos de compilación en desarrollo.
+- **Bundle Analyzer (Experimental)**: Preparado para optimización de código mediante `next experimental-analyze`.
+- **serverExternalPackages**: Manejo mejorado de dependencias transitivas externas.
+
+### Arquitectura de Datos
 - **Directiva `use cache`**: Aplicada globalmente a los servicios de Strapi (Artículos) y Supabase (Oficinas) mediante el servicio `officeService.ts`.
 - **Carga Optimizado**: Reducción del tiempo de respuesta mediante almacenamiento persistente en el servidor (Data Cache).
 
 ### Compatibilidad y Estabilidad
-- **APIs Asíncronas**: Refactorización completa de `cookies()`, `params` y `searchParams` para el modelo de Next.js 15+.
-- **Hidratación**: Corrección de discrepancias temporales y eliminación de efectos secundarios en el renderizado inicial para compatibilidad con React 19.
+- **Peer Dependencies Overrides**: Configuración en `package.json` para forzar la compatibilidad de módulos antiguos con la rama 16.
+- **Hidratación**: Corrección de discrepancias temporales y eliminación de efectos secundarios en el renderizado inicial.
 
-## 3. Registro de Fases
+## 3. Registro de Fases Completadas
 
-1.  **Fase 1 (Preparación) [COMPLETADO]**: Actualización a React 19.
-2.  **Fase 2 (Auditoría) [COMPLETADO]**: Refactorización de componentes asíncronos.
-3.  **Fase 3 (Migración de Next.js) [COMPLETADO]**: Salto a la versión estable 15.1.6 (Corregido tras error de versión inexistente 16.x).
-4.  **Fase 4 (Refactorización Avanzada) [COMPLETADO]**: Implementación de caché avanzada para todos los servicios de datos.
+1.  **Fase 1 (Preparación)**: Actualización a React 19.
+2.  **Fase 2 (Auditoría)**: Refactorización de componentes asíncronos (`cookies()`, `params`).
+3.  **Fase 3 (Migración de Next.js)**: Salto a la rama 16.1 utilizando el tag `latest` para asegurar compatibilidad con el registro de NPM.
+4.  **Fase 4 (Refactorización Avanzada)**: Implementación de caché avanzada para todos los servicios de datos.
 
 ## 4. Conclusión
-El proyecto se encuentra en un estado óptimo, utilizando la última rama estable disponible. Se ha verificado que la versión 16.x no está presente aún en el registro público, por lo que la versión 15.1.6 garantiza el máximo rendimiento sin sacrificar estabilidad operativa.
+El proyecto se encuentra en su estado más avanzado, cumpliendo con los estándares de Next.js 16.1. La infraestructura está lista para aprovechar el nuevo motor de compilación Turbopack y las herramientas de análisis de paquetes.
 
 ---
-*Documento de cierre de migración - 24 de mayo de 2024 (Actualizado tras corrección de dependencias).*
+*Documento actualizado - 9 de febrero de 2026 (Migración a Next.js 16.1 Finalizada).*
