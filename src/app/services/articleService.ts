@@ -7,6 +7,7 @@ import { fetchFromStrapi, getStrapiURL } from "@/lib/api";
  * @param categoryName - El nombre de la categoría por la cual filtrar.
  */
 export async function getArticles(categoryName?: string): Promise<Article[]> {
+  'use cache';
   const params: any = {
     sort: { date: 'desc' },
     fields: ["title", "description", "date"],
@@ -51,6 +52,7 @@ export async function getArticles(categoryName?: string): Promise<Article[]> {
  * Obtiene un artículo específico por su ID de Strapi.
  */
 export async function getArticleById(id: string): Promise<Article | null> {
+  'use cache';
   if (!id) return null;
   
   const params = {
@@ -86,6 +88,7 @@ export async function getArticleById(id: string): Promise<Article | null> {
  * Obtiene un artículo específico por su slug.
  */
 export async function getArticleBySlug(slug: string): Promise<Article | null> {
+  'use cache';
   const params = {
     filters: { slug: { $eq: slug } },
     fields: ["title", "description", "date", "slug"],
