@@ -19,6 +19,7 @@ import {
   GraduationCap,
   Briefcase,
   Heart,
+  Activity,
 } from "lucide-react";
 import { ArticleSection } from "@/components/articles/ArticleSection";
 import Link from "next/link";
@@ -158,6 +159,23 @@ export default function CuidadoSaludLandingPage() {
                     </h4>
                     <p className="text-sm text-muted-foreground">
                       Información y recursos de nuestro programa de acompañamiento integral.
+                    </p>
+                  </div>
+                </Link>
+
+                <Link
+                  href="/afiliados/subsidiado/salud/programas/cancer"
+                  className="group flex items-start gap-4 p-4 rounded-lg hover:bg-muted/50 transition-colors"
+                >
+                  <div className="p-3 bg-primary/10 rounded-full group-hover:bg-primary group-hover:text-primary-foreground">
+                    <Activity className="h-6 w-6 text-primary group-hover:text-primary-foreground" />
+                  </div>
+                  <div>
+                    <h4 className="font-semibold text-foreground">
+                      Cáncer
+                    </h4>
+                    <p className="text-sm text-muted-foreground">
+                      Programas de detección temprana y apoyo integral en el tratamiento.
                     </p>
                   </div>
                 </Link>
