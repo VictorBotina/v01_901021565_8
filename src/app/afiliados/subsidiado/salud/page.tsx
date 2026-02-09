@@ -197,6 +197,23 @@ export default function CuidadoSaludLandingPage() {
                     </p>
                   </div>
                 </Link>
+
+                <Link
+                  href="/afiliados/subsidiado/salud/programas/asma"
+                  className="group flex items-start gap-4 p-4 rounded-lg hover:bg-muted/50 transition-colors"
+                >
+                  <div className="p-3 bg-primary/10 rounded-full group-hover:bg-primary group-hover:text-primary-foreground">
+                    <Activity className="h-6 w-6 text-primary group-hover:text-primary-foreground" />
+                  </div>
+                  <div>
+                    <h4 className="font-semibold text-foreground">
+                      Asma
+                    </h4>
+                    <p className="text-sm text-muted-foreground">
+                      Control y prevención de crisis para una mejor calidad de vida respiratoria.
+                    </p>
+                  </div>
+                </Link>
                 
                 <Link
                   href="/afiliados/subsidiado/salud/programas"
