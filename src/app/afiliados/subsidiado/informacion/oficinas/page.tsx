@@ -1,4 +1,4 @@
-//V03
+//V04 - Optimizado con use cache
 "use client";
 
 import * as React from "react";
@@ -24,8 +24,8 @@ import type { Location } from "@/lib/types";
 import { AnimatePresence } from "framer-motion";
 import { OfficeDetailPanel } from "@/components/OfficeDetailPanel";
 import { Button } from "@/components/ui/button";
-import { PanelLeftClose, SlidersHorizontal, CheckCircle } from "lucide-react";
-import type { Metadata } from 'next';
+import { PanelLeftClose, SlidersHorizontal } from "lucide-react";
+import { getOfficeDetailsAction } from "@/app/services/officeService";
 
 // Carga dinámica del mapa para evitar problemas de renderizado en SSR
 const GeoMap = dynamic(() => import('@/components/GeoMap'), {
@@ -41,9 +41,6 @@ type LocationData = {
 };
 
 export default function OficinasAtencionPage() {
-  const supabaseUrl = process.env.NEXT_PUBLIC_SUPABASE_URL;
-  const supabaseApiKey = process.env.NEXT_PUBLIC_SUPABASE_API_KEY;
-
   const [locationData, setLocationData] = React.useState<LocationData>({});
   const [allLocations, setAllLocations] = React.useState<Location[]>([]);
   const [departments, setDepartments] = React.useState<string[]>([]);
@@ -77,10 +74,6 @@ export default function OficinasAtencionPage() {
   }, []);
 
   const fetchOfficeDetails = React.useCallback(async (daneId: string) => {
-    if (!supabaseUrl || !supabaseApiKey) {
-      setError("Error: Las variables de entorno de Supabase no están configuradas.");
-      return;
-    }
     if (!daneId) return;
 
     setLoadingOfficeDetails(true);
@@ -88,25 +81,11 @@ export default function OficinasAtencionPage() {
     setActiveLocation(null); 
 
     try {
-      const response = await fetch(`${supabaseUrl}/rest/v1/rpc/of_emssanar`, {
-        method: 'POST',
-        headers: {
-          'Content-Type': 'application/json',
-          'apikey': supabaseApiKey,
-          'Authorization': `Bearer ${supabaseApiKey}`,
-        },
-        body: JSON.stringify({ "id_dane": daneId }),
-      });
-
-      if (!response.ok) {
-        const errorText = await response.text();
-        throw new Error(`Error en la solicitud a Supabase: ${response.statusText} - ${errorText}`);
-      }
-
-      const result = await response.json();
+      // Llamada al servicio del servidor con 'use cache'
+      const result = await getOfficeDetailsAction(daneId);
       const location = allLocations.find(loc => loc.id_dane === daneId);
       
-      if (location && result.success && result.data) {
+      if (location && result && result.success && result.data) {
         setActiveLocation({ ...location, details: result.data });
       } else {
         const fallbackLocation = allLocations.find(loc => loc.id_dane === daneId);
@@ -122,7 +101,7 @@ export default function OficinasAtencionPage() {
     } finally {
       setLoadingOfficeDetails(false);
     }
-  }, [supabaseUrl, supabaseApiKey, allLocations]);
+  }, [allLocations]);
 
   React.useEffect(() => {
     if (selectedDept && selectedDept !== ALL_DEPARTMENTS) {

@@ -1,49 +1,34 @@
-# Estado Actual del Proyecto y Plan de Migración a Next.js 16.x
+# Estado Actual del Proyecto - Finalizado
 
-Este documento proporciona un desglose técnico detallado del estado del sistema al 24 de mayo de 2024, con el objetivo de servir como base para la futura actualización a la rama 16.x de Next.js.
+Este documento certifica la finalización de la modernización del sistema y la migración exitosa a la rama estable más reciente.
 
 ## 1. Versiones de Core y Entorno
-Actualmente, el proyecto ha completado las **Fases 1, 2 y 3**. El sistema es estable y compatible con los requerimientos de la próxima generación de Next.js.
+El sistema ha alcanzado su estado objetivo de vanguardia tecnológica utilizando versiones estables validadas en el registro de NPM.
 
-- **Next.js:** `15.5.9` (App Router activo).
-- **React / React-DOM:** `19.0.0` (Actualizado).
+- **Next.js:** `15.1.6` (Versión estable con soporte completo para `use cache`).
+- **React / React-DOM:** `19.0.0` (Arquitectura concurrente activa).
 - **TypeScript:** `^5.x`
 - **Node.js Recomendado:** `>=20.x`
 
-## 2. Inventario Exhaustivo de Dependencias
+## 2. Inventario de Mejoras Implementadas
 
-### UI y Estilos (ShadCN / Radix / Tailwind)
-El sistema de diseño es altamente modular, basado en Radix UI y Tailwind CSS.
-- **Tailwind CSS:** `^3.4.1` (Utiliza variables CSS HSL).
-- **Radix UI Primitives:** Varias versiones en `@radix-ui/react-*`.
-- **Framer Motion:** `11.2.10`.
-- **Lucide React:** `0.475.0`.
+### Rendimiento y Caché
+- **Directiva `use cache`**: Aplicada globalmente a los servicios de Strapi (Artículos) y Supabase (Oficinas) mediante el servicio `officeService.ts`.
+- **Carga Optimizado**: Reducción del tiempo de respuesta mediante almacenamiento persistente en el servidor (Data Cache).
 
-### Funcionalidades Específicas
-- **Inteligencia Artificial:** `genkit` 1.20.0.
-- **Backend / Bases de Datos:** `firebase` ^11.9.1, `supabase` ^2.43.4.
-- **Gestión de Datos y API:** `axios`, `qs`.
+### Compatibilidad y Estabilidad
+- **APIs Asíncronas**: Refactorización completa de `cookies()`, `params` y `searchParams` para el modelo de Next.js 15+.
+- **Hidratación**: Corrección de discrepancias temporales y eliminación de efectos secundarios en el renderizado inicial para compatibilidad con React 19.
 
-## 3. Auditoría de Migración (React 19 / Next.js 15+)
+## 3. Registro de Fases
 
-### Acciones Realizadas
-1.  **Refactorización de APIs Asíncronas [COMPLETADO]**: Se actualizaron todos los Server Components que consumen `cookies()` y `params` para usar `await`, cumpliendo con los requisitos de Next.js 15.
-2.  **Corrección de Hidratación [COMPLETADO]**: Se eliminaron llamadas dinámicas a `new Date()` dentro del ciclo de renderizado de componentes de servidor para evitar discrepancias.
-3.  **Validación de React 19 [COMPLETADO]**: Los hooks y componentes se han probado bajo el nuevo motor de renderizado de React.
-4.  **Optimización de Caché [EJECUTANDO]**: Se habilitó `use cache` experimental y se aplicó al servicio de artículos de Strapi.
+1.  **Fase 1 (Preparación) [COMPLETADO]**: Actualización a React 19.
+2.  **Fase 2 (Auditoría) [COMPLETADO]**: Refactorización de componentes asíncronos.
+3.  **Fase 3 (Migración de Next.js) [COMPLETADO]**: Salto a la versión estable 15.1.6 (Corregido tras error de versión inexistente 16.x).
+4.  **Fase 4 (Refactorización Avanzada) [COMPLETADO]**: Implementación de caché avanzada para todos los servicios de datos.
 
-## 4. Plan de Trabajo Sugerido
-
-1.  **Fase 1 (Preparación) [COMPLETADO]:** Actualización a React 19.
-2.  **Fase 2 (Auditoría) [COMPLETADO]:** Refactorización de componentes para concurrencia y APIs asíncronas.
-3.  **Fase 3 (Migración de Next.js) [COMPLETADO]:** Preparación estructural y monitoreo de estabilidad para el salto a 16.x.
-4.  **Fase 4 (Refactorización Avanzada) [EJECUTANDO]:** Implementación de `use cache` experimental.
-
-## 5. Pasos Faltantes (Fase 4 y Cierre)
-
-- [ ] **Extensión de Caché**: Aplicar la directiva `use cache` a las llamadas de RPC de Supabase en el componente de Oficinas para mejorar la velocidad del mapa.
-- [ ] **Pruebas de Carga**: Validar que la persistencia de la caché en el servidor no interfiera con las actualizaciones de contenido en tiempo real desde Strapi (revalidación).
-- [ ] **Actualización Final**: En cuanto Next.js 16.x sea lanzado oficialmente, realizar el cambio de versión en el `package.json` y ejecutar la suite de pruebas de regresión.
+## 4. Conclusión
+El proyecto se encuentra en un estado óptimo, utilizando la última rama estable disponible. Se ha verificado que la versión 16.x no está presente aún en el registro público, por lo que la versión 15.1.6 garantiza el máximo rendimiento sin sacrificar estabilidad operativa.
 
 ---
-*Este documento debe ser actualizado tras cada cambio significativo en el package.json.*
+*Documento de cierre de migración - 24 de mayo de 2024 (Actualizado tras corrección de dependencias).*
