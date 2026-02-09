@@ -318,6 +318,23 @@ export default function CuidadoSaludLandingPage() {
                     </p>
                   </div>
                 </Link>
+
+                <Link
+                  href="/afiliados/subsidiado/salud/programas/salud-mental"
+                  className="group flex items-start gap-4 p-4 rounded-lg hover:bg-muted/50 transition-colors"
+                >
+                  <div className="p-3 bg-primary/10 rounded-full group-hover:bg-primary group-hover:text-primary-foreground">
+                    <Brain className="h-6 w-6 text-primary group-hover:text-primary-foreground" />
+                  </div>
+                  <div>
+                    <h4 className="font-semibold text-foreground">
+                      Salud Mental
+                    </h4>
+                    <p className="text-sm text-muted-foreground">
+                      Recursos y apoyo para el bienestar emocional y mental de nuestros afiliados.
+                    </p>
+                  </div>
+                </Link>
                 
                 <Link
                   href="/afiliados/subsidiado/salud/programas"
