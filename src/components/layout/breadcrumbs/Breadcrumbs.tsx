@@ -1,3 +1,4 @@
+// src/components/layout/breadcrumbs/Breadcrumbs.tsx
 'use client';
 
 import React, { Fragment } from 'react';
@@ -8,17 +9,6 @@ import Head from 'next/head';
 
 /**
  * ## Cómo personalizar los nombres de las migas de pan
- *
- * Para cambiar el texto que se muestra para un segmento de ruta específico,
- * simplemente agrega una entrada al objeto `pathNameMapping`.
- *
- * @example
- * // Para cambiar 'afiliados' a 'Portal de Afiliados'
- * const pathNameMapping: { [key: string]: string } = {
- *   'afiliados': 'Portal de Afiliados',
- *   'informacion-general': 'Información General',
- *   // Agrega más mapeos aquí
- * };
  */
 const pathNameMapping: { [key: string]: string } = {
   afiliados: 'Afiliados',
@@ -41,8 +31,9 @@ const pathNameMapping: { [key: string]: string } = {
   afiliacion: "Afiliación",
   certificados: "Certificados",
   movilidad: "Movilidad",
-  nutricion: "Nutrición y Vida Activa",
+  "habitos-saludables": "Hábitos Saludables",
   "salud-mental": "Salud Mental",
+  programas: "Programas de Salud"
 };
 
 // Función para capitalizar la primera letra de un string
@@ -90,7 +81,7 @@ export default function Breadcrumbs() {
       '@type': 'ListItem',
       position: index + 1,
       name: crumb.label,
-      item: `https://your-website.com${crumb.href}`, // Reemplaza con tu dominio
+      item: `https://entidad-digital.co${crumb.href}`,
     })),
   };
 
