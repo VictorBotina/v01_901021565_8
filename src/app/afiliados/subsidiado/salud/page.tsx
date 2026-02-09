@@ -373,6 +373,23 @@ export default function CuidadoSaludLandingPage() {
                 </Link>
 
                 <Link
+                  href="/afiliados/subsidiado/salud/programas/fiebre-amarilla"
+                  className="group flex items-start gap-4 p-4 rounded-lg hover:bg-muted/50 transition-colors"
+                >
+                  <div className="p-3 bg-primary/10 rounded-full group-hover:bg-primary group-hover:text-primary-foreground">
+                    <Activity className="h-6 w-6 text-primary group-hover:text-primary-foreground" />
+                  </div>
+                  <div>
+                    <h4 className="font-semibold text-foreground">
+                      Fiebre Amarilla
+                    </h4>
+                    <p className="text-sm text-muted-foreground">
+                      Información detallada sobre la fiebre amarilla y la importancia de la vacunación.
+                    </p>
+                  </div>
+                </Link>
+
+                <Link
                   href="/afiliados/subsidiado/salud/programas/enfoque-diferencial"
                   className="group flex items-start gap-4 p-4 rounded-lg hover:bg-muted/50 transition-colors"
                 >
