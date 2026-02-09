@@ -23,6 +23,7 @@ import {
 import { ArticleSection } from "@/components/articles/ArticleSection";
 import Link from "next/link";
 import React from "react";
+import { Button } from "@/components/ui/button";
 
 const cursosDeVida = [
   {
@@ -144,7 +145,22 @@ export default function CuidadoSaludLandingPage() {
                 </CardDescription>
               </CardHeader>
               <CardContent className="space-y-4">
-                
+                 <Link
+                  href="/afiliados/subsidiado/salud/programas/artritis"
+                  className="group flex items-start gap-4 p-4 rounded-lg hover:bg-muted/50 transition-colors"
+                >
+                  <div className="p-3 bg-primary/10 rounded-full group-hover:bg-primary group-hover:text-primary-foreground">
+                    <Stethoscope className="h-6 w-6 text-primary group-hover:text-primary-foreground" />
+                  </div>
+                  <div>
+                    <h4 className="font-semibold text-foreground">
+                      Artritis Reumatoide
+                    </h4>
+                    <p className="text-sm text-muted-foreground">
+                      Información y recursos de nuestro programa de acompañamiento integral.
+                    </p>
+                  </div>
+                </Link>
                 
                 <Link
                   href="/afiliados/subsidiado/salud/programas"
@@ -158,28 +174,16 @@ export default function CuidadoSaludLandingPage() {
                       Otros Programas de Salud
                     </h4>
                     <p className="text-sm text-muted-foreground">
-                      Explora todos nuestros programas de gestión del riesgo en
-                      salud.
+                      Explora todos nuestros programas de gestión del riesgo en salud.
                     </p>
                   </div>
                 </Link>
-                <Link
-                  href="/afiliados/subsidiado/salud/programas"
-                  className="group flex items-start gap-4 p-4 rounded-lg hover:bg-muted/50 transition-colors"
-                >
-                  <div className="p-3 bg-primary/10 rounded-full group-hover:bg-primary group-hover:text-primary-foreground">
-                    <HeartPulse className="h-6 w-6 text-primary group-hover:text-primary-foreground" />
-                  </div>
-                  <div>
-                    <h4 className="font-semibold text-foreground">
-                      Otros Programas de Salud
-                    </h4>
-                    <p className="text-sm text-muted-foreground">
-                      Explora todos nuestros programas de gestión del riesgo en
-                      salud.
-                    </p>
-                  </div>
-                </Link>
+
+                <div className="flex justify-center pt-4">
+                    <Button asChild variant="outline" className="w-full">
+                        <Link href="/afiliados/subsidiado/salud/programas">Ver todos los programas</Link>
+                    </Button>
+                </div>
               </CardContent>
             </Card>
           </section>
