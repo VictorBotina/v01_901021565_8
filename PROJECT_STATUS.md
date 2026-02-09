@@ -3,10 +3,10 @@
 Este documento proporciona un desglose técnico detallado del estado del sistema al 24 de mayo de 2024, con el objetivo de servir como base para la futura actualización a la rama 16.x de Next.js.
 
 ## 1. Versiones de Core y Entorno
-Actualmente, el proyecto opera en la frontera tecnológica de Next.js 15, pero mantiene una base de React 18 que deberá ser el primer punto de atención en la migración.
+Actualmente, el proyecto ha iniciado la Fase 1 de migración, actualizando a React 19 sobre Next.js 15.
 
 - **Next.js:** `15.5.9` (App Router activo).
-- **React / React-DOM:** `^18.3.1` (Se requiere actualización a v19 para Next.js 16).
+- **React / React-DOM:** `^19.0.0` (Actualizado para preparación de Next.js 16).
 - **TypeScript:** `^5.x`
 - **Node.js Recomendado:** `>=20.x`
 
@@ -56,7 +56,7 @@ El sistema de diseño es altamente modular, basado en Radix UI y Tailwind CSS.
 3. **Genkit:** Al ser un framework de Firebase en constante evolución, se debe asegurar que los "Flows" de servidor no tengan conflictos con las nuevas optimizaciones de caching de Next.js 16.
 
 ### Plan de Trabajo Sugerido
-1. **Fase 1 (Preparación):** Actualizar React y React-DOM a la versión `19.0.0` sobre la versión actual de Next.js 15 para identificar errores de hidratación.
+1. **Fase 1 (Preparación) [EN PROCESO]:** Actualizar React y React-DOM a la versión `19.0.0` sobre la versión actual de Next.js 15 para identificar errores de hidratación.
 2. **Fase 2 (Auditoría):** Revisar todos los componentes que usan `useEffect` para asegurar que son compatibles con las mejoras de concurrencia de React 19.
 3. **Fase 3 (Migración de Next.js):** Actualizar `next` a `16.x` una vez se publique la rama estable.
 4. **Fase 4 (Refactorización):** Aprovechar las nuevas APIs de caching y los posibles cambios en `use cache` (si se vuelve estable) para reemplazar patrones antiguos de Strapi fetching.
