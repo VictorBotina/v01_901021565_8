@@ -22,6 +22,7 @@ import {
   Activity,
   Wind,
   ShieldAlert,
+  Syringe,
 } from "lucide-react";
 import { ArticleSection } from "@/components/articles/ArticleSection";
 import Link from "next/link";
@@ -280,6 +281,23 @@ export default function CuidadoSaludLandingPage() {
                     </h4>
                     <p className="text-sm text-muted-foreground">
                       Acompañamiento integral, tratamiento y apoyo para una mejor calidad de vida.
+                    </p>
+                  </div>
+                </Link>
+
+                <Link
+                  href="/afiliados/subsidiado/salud/programas/vacunacion"
+                  className="group flex items-start gap-4 p-4 rounded-lg hover:bg-muted/50 transition-colors"
+                >
+                  <div className="p-3 bg-primary/10 rounded-full group-hover:bg-primary group-hover:text-primary-foreground">
+                    <Syringe className="h-6 w-6 text-primary group-hover:text-primary-foreground" />
+                  </div>
+                  <div>
+                    <h4 className="font-semibold text-foreground">
+                      Esquema de Vacunación
+                    </h4>
+                    <p className="text-sm text-muted-foreground">
+                      Protege tu salud y la de tu familia completando los esquemas de inmunización.
                     </p>
                   </div>
                 </Link>
