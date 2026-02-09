@@ -20,6 +20,7 @@ import {
   Briefcase,
   Heart,
   Activity,
+  Wind,
 } from "lucide-react";
 import { ArticleSection } from "@/components/articles/ArticleSection";
 import Link from "next/link";
@@ -176,6 +177,23 @@ export default function CuidadoSaludLandingPage() {
                     </h4>
                     <p className="text-sm text-muted-foreground">
                       Programas de detección temprana y apoyo integral en el tratamiento.
+                    </p>
+                  </div>
+                </Link>
+
+                <Link
+                  href="/afiliados/subsidiado/salud/programas/epoc"
+                  className="group flex items-start gap-4 p-4 rounded-lg hover:bg-muted/50 transition-colors"
+                >
+                  <div className="p-3 bg-primary/10 rounded-full group-hover:bg-primary group-hover:text-primary-foreground">
+                    <Wind className="h-6 w-6 text-primary group-hover:text-primary-foreground" />
+                  </div>
+                  <div>
+                    <h4 className="font-semibold text-foreground">
+                      EPOC
+                    </h4>
+                    <p className="text-sm text-muted-foreground">
+                      Atención integral para la Enfermedad Pulmonar Obstructiva Crónica.
                     </p>
                   </div>
                 </Link>
