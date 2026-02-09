@@ -390,6 +390,23 @@ export default function CuidadoSaludLandingPage() {
                 </Link>
 
                 <Link
+                  href="/afiliados/subsidiado/salud/programas/donacion-organos"
+                  className="group flex items-start gap-4 p-4 rounded-lg hover:bg-muted/50 transition-colors"
+                >
+                  <div className="p-3 bg-primary/10 rounded-full group-hover:bg-primary group-hover:text-primary-foreground">
+                    <HeartPulse className="h-6 w-6 text-primary group-hover:text-primary-foreground" />
+                  </div>
+                  <div>
+                    <h4 className="font-semibold text-foreground">
+                      Donación de Órganos
+                    </h4>
+                    <p className="text-sm text-muted-foreground">
+                      Un acto de vida: conoce la importancia y el proceso para ser donante.
+                    </p>
+                  </div>
+                </Link>
+
+                <Link
                   href="/afiliados/subsidiado/salud/programas/enfoque-diferencial"
                   className="group flex items-start gap-4 p-4 rounded-lg hover:bg-muted/50 transition-colors"
                 >
