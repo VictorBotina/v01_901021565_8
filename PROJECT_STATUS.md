@@ -30,7 +30,7 @@ El sistema de diseño es altamente modular, basado en Radix UI y Tailwind CSS.
 1.  **Refactorización de APIs Asíncronas [COMPLETADO]**: Se actualizaron todos los Server Components que consumen `cookies()` y `params` para usar `await`, cumpliendo con los requisitos de Next.js 15.
 2.  **Corrección de Hidratación [COMPLETADO]**: Se eliminaron llamadas dinámicas a `new Date()` dentro del ciclo de renderizado de componentes de servidor para evitar discrepancias.
 3.  **Validación de React 19 [COMPLETADO]**: Los hooks y componentes se han probado bajo el nuevo motor de renderizado de React.
-4.  **Preparación Estructural [COMPLETADO]**: El proyecto está listo para el salto a la versión 16.x.
+4.  **Optimización de Caché [EJECUTANDO]**: Se habilitó `use cache` experimental y se aplicó al servicio de artículos de Strapi.
 
 ## 4. Plan de Trabajo Sugerido
 
@@ -38,6 +38,12 @@ El sistema de diseño es altamente modular, basado en Radix UI y Tailwind CSS.
 2.  **Fase 2 (Auditoría) [COMPLETADO]:** Refactorización de componentes para concurrencia y APIs asíncronas.
 3.  **Fase 3 (Migración de Next.js) [COMPLETADO]:** Preparación estructural y monitoreo de estabilidad para el salto a 16.x.
 4.  **Fase 4 (Refactorización Avanzada) [EJECUTANDO]:** Implementación de `use cache` experimental.
+
+## 5. Pasos Faltantes (Fase 4 y Cierre)
+
+- [ ] **Extensión de Caché**: Aplicar la directiva `use cache` a las llamadas de RPC de Supabase en el componente de Oficinas para mejorar la velocidad del mapa.
+- [ ] **Pruebas de Carga**: Validar que la persistencia de la caché en el servidor no interfiera con las actualizaciones de contenido en tiempo real desde Strapi (revalidación).
+- [ ] **Actualización Final**: En cuanto Next.js 16.x sea lanzado oficialmente, realizar el cambio de versión en el `package.json` y ejecutar la suite de pruebas de regresión.
 
 ---
 *Este documento debe ser actualizado tras cada cambio significativo en el package.json.*
