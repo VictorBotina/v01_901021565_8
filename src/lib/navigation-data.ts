@@ -75,6 +75,7 @@ export const navigationItems: NavItem[] = [
                         { id: 'sub-salud-habitos', text: 'Hábitos Saludables y Vida Activa', href: '/afiliados/subsidiado/salud/programas/habitos-saludables' },
                         { id: 'sub-salud-maternidad', text: 'Cuidado Materno', href: '/afiliados/subsidiado/salud/programas/maternidad' },
                         { id: 'sub-salud-artritis', text: 'Artritis Reumatoide', href: '/afiliados/subsidiado/salud/programas/artritis' },
+                        { id: 'sub-salud-dengue', text: 'Prevención del Dengue', href: '/afiliados/subsidiado/salud/programas/dengue' },
                         { id: 'sub-salud-mental', text: 'Salud Mental', href: '/afiliados/subsidiado/salud/programas/salud-mental' },
                         { id: 'sub-salud-pyp', text: 'Cursos de vida', href: '/afiliados/subsidiado/salud' },
                     ]
