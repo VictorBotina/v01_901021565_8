@@ -56,6 +56,11 @@ export const navigationItems: NavItem[] = [
                         { id: 'sub-tramites-guia', text: 'Guía de Trámites', href: '/afiliados/subsidiado/tramites' },
                         { id: 'sub-tramites-afiliacion', text: 'Afiliación', href: '/afiliados/subsidiado/tramites/afiliacion' },
                         { id: 'sub-tramites-certificados', text: 'Certificados', href: '/afiliados/subsidiado/tramites/certificado-afiliacion' },
+                        { id: 'sub-tramites-movilidad', text: 'Movilidad', href: '/afiliados/subsidiado/tramites/movilidad' },
+                        { id: 'sub-tramites-portabilidad', text: 'Portabilidad', href: '/afiliados/subsidiado/tramites/portabilidad' },
+                        { id: 'sub-tramites-actualizacion', text: 'Actualización de datos', href: '/afiliados/subsidiado/tramites/actualizacion-de-datos' },
+                        { id: 'sub-tramites-autorizaciones', text: 'Solicitud de autorizaciones', href: '/afiliados/subsidiado/tramites/autorizaciones' },
+                        { id: 'sub-tramites-pqr', text: 'Peticiones, Quejas y Reclamos', href: '/afiliados/subsidiado/tramites/pqr' },
                     ]
                 }
             ]
