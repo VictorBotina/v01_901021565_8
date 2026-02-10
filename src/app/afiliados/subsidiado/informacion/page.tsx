@@ -1,6 +1,6 @@
 // src/app/afiliados/subsidiado/informacion/page.tsx
 import { Card, CardHeader, CardTitle, CardContent, CardDescription } from "@/components/ui/card";
-import { ArrowRight, BookUser, FileText, UserCheck, Phone, HandCoins, Hospital, Pill, CalendarPlus, FileSignature, Users, Ambulance, ClipboardCheck, Receipt, ReceiptText, UserPlus } from "lucide-react";
+import { ArrowRight, BookUser, FileText, UserCheck, Phone, HandCoins, Hospital, Pill, CalendarPlus, FileSignature, Users, Ambulance, ClipboardCheck, Receipt, ReceiptText, UserPlus, MapPin } from "lucide-react";
 import Link from 'next/link';
 import { Button } from "@/components/ui/button";
 import React from "react";
@@ -37,6 +37,12 @@ export default function InformacionLandingPage() {
       title: "Canales de Atención", 
       description: "Encuentra oficinas, líneas telefónicas y todo el soporte que necesitas.",
       icon: <Phone />
+    },
+    { 
+      href: "/afiliados/subsidiado/informacion/oficinas", 
+      title: "Oficinas de Atención", 
+      description: "Localiza nuestras oficinas físicas y puntos de atención al usuario (SIAU).",
+      icon: <MapPin />
     },
      { 
       href: "/afiliados/subsidiado/informacion/contribucion-solidaria", 
@@ -115,7 +121,7 @@ export default function InformacionLandingPage() {
                 <Card key={link.href} className="flex flex-col text-center items-center hover:shadow-lg transition-shadow">
                     <CardHeader className="items-center p-6">
                       <div className="p-4 bg-primary/10 rounded-full mb-2">
-                          {React.cloneElement(link.icon, { className: "h-8 w-8 text-primary"})}
+                          {React.cloneElement(link.icon as React.ReactElement<{ className?: string }>, { className: "h-8 w-8 text-primary"})}
                       </div>
                       <CardTitle as="h3">{link.title}</CardTitle>
                     </CardHeader>
