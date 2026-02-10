@@ -73,6 +73,7 @@ export const navigationItems: NavItem[] = [
                     links: [
                         { id: 'sub-salud-programas', text: 'Programas de Salud', href: '/afiliados/subsidiado/salud/programas' },
                         { id: 'sub-salud-nutricion', text: 'Hábitos Saludables y Vida Activa', href: '/afiliados/subsidiado/salud/programas/habitos-saludables' },
+                        { id: 'sub-salud-maternidad', text: 'Cuidado Materno', href: '/afiliados/subsidiado/salud/programas/maternidad' },
                         { id: 'sub-salud-mental', text: 'Salud Mental', href: '/afiliados/subsidiado/salud/programas/salud-mental' },
                         { id: 'sub-salud-pyp', text: 'Cursos de vida', href: '/afiliados/subsidiado/salud' },
                     ]
