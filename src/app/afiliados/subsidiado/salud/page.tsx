@@ -14,7 +14,6 @@ import {
   Baby,
   Cake,
   PersonStanding,
-  User,
   School,
   GraduationCap,
   Briefcase,
@@ -23,7 +22,6 @@ import {
   Wind,
   ShieldAlert,
   Syringe,
-  Users,
   Bug,
 } from "lucide-react";
 import { ArticleSection } from "@/components/articles/ArticleSection";
@@ -79,6 +77,65 @@ const cursosDeVida = [
     icon: <Heart />,
     description: "Atención integral, prevención y rehabilitación.",
     href: "/afiliados/subsidiado/salud/cursos-de-vida/vejez",
+  },
+];
+
+const programGroups = [
+  {
+    category: "Cuidado de Largo Plazo y Enfermedades Crónicas",
+    programs: [
+      { title: "Artritis Reumatoide", href: "/afiliados/subsidiado/salud/programas/artritis", icon: <Stethoscope />, description: "Información y recursos de nuestro programa de acompañamiento integral." },
+      { title: "Cáncer", href: "/afiliados/subsidiado/salud/programas/cancer", icon: <Activity />, description: "Programas de detección temprana y apoyo integral en el tratamiento." },
+      { title: "EPOC", href: "/afiliados/subsidiado/salud/programas/epoc", icon: <Wind />, description: "Atención integral para la Enfermedad Pulmonar Obstructiva Crónica." },
+      { title: "Asma", href: "/afiliados/subsidiado/salud/programas/asma", icon: <Activity />, description: "Control y prevención de crisis para una mejor calidad de vida respiratoria." },
+    ]
+  },
+  {
+    category: "Enfermedades Huérfanas y de Baja Frecuencia",
+    programs: [
+      { title: "Enfermedades Huérfanas", href: "/afiliados/subsidiado/salud/programas/enfermedades-huerfanas", icon: <ShieldAlert />, description: "Atención y seguimiento para condiciones de baja prevalencia." },
+    ]
+  },
+  {
+    category: "Salud Respiratoria",
+    programs: [
+      { title: "Infección Respiratoria Aguda (IRA)", href: "/afiliados/subsidiado/salud/programas/ira", icon: <Activity />, description: "Prevención y cuidado de infecciones respiratorias en todas las etapas." },
+    ]
+  },
+  {
+    category: "Prevención y Manejo de Enfermedades Infecciosas",
+    programs: [
+      { title: "Enfermedad Diarreica Aguda (EDA)", href: "/afiliados/subsidiado/salud/programas/eda", icon: <Activity />, description: "Medidas de prevención y manejo, especialmente en niños." },
+      { title: "Prevención del Dengue", href: "/afiliados/subsidiado/salud/programas/dengue", icon: <Bug />, description: "Información sobre prevención, síntomas de alarma y control del mosquito." },
+      { title: "Fiebre Amarilla", href: "/afiliados/subsidiado/salud/programas/fiebre-amarilla", icon: <Activity />, description: "Información detallada sobre la fiebre amarilla y la importancia de la vacunación." },
+    ]
+  },
+  {
+    category: "Salud Sexual y Reproductiva",
+    programs: [
+      { title: "Infecciones de Transmisión Sexual (ITS)", href: "/afiliados/subsidiado/salud/programas/its", icon: <ShieldAlert />, description: "Educación, prevención y acceso a pruebas para una salud sexual segura." },
+      { title: "VIH / SIDA", href: "/afiliados/subsidiado/salud/programas/vih-sida", icon: <Activity />, description: "Acompañamiento integral, tratamiento y apoyo para una mejor calidad de vida." },
+      { title: "Cuidado Materno", href: "/afiliados/subsidiado/salud/programas/maternidad", icon: <Baby />, description: "Acompañamiento integral para una maternidad segura y saludable." },
+    ]
+  },
+  {
+    category: "Bienestar Emocional y Mental",
+    programs: [
+      { title: "Salud Mental", href: "/afiliados/subsidiado/salud/programas/salud-mental", icon: <Brain />, description: "Recursos y apoyo para el bienestar emocional y mental de nuestros afiliados." },
+    ]
+  },
+  {
+    category: "Prevención y Protección de la Salud",
+    programs: [
+      { title: "Esquema de Vacunación", href: "/afiliados/subsidiado/salud/programas/vacunacion", icon: <Syringe />, description: "Protege tu salud y la de tu familia completando los esquemas de inmunización." },
+      { title: "Hábitos Saludables y Vida Activa", href: "/afiliados/subsidiado/salud/programas/habitos-saludables", icon: <Apple />, description: "Promovemos el bienestar integral a través de la alimentación balanceada y el ejercicio." },
+    ]
+  },
+  {
+    category: "Solidaridad y Vida",
+    programs: [
+      { title: "Donación de Órganos", href: "/afiliados/subsidiado/salud/programas/donacion-organos", icon: <HeartPulse />, description: "Un acto de vida: conoce la importancia y el proceso para ser donante." },
+    ]
   },
 ];
 
@@ -142,309 +199,51 @@ export default function CuidadoSaludLandingPage() {
             </Card>
           </section>
 
-          {/* Columna Programas de Salud */}
-          <section>
+          {/* Columna Programas de Salud Organizados */}
+          <section className="space-y-8">
             <h2 className="text-3xl font-bold text-center mb-8">
-              Programas Cuidado de la Salud
+              Nuestros Programas
             </h2>
+            
             <Card>
               <CardHeader>
-                <CardTitle as="h3">Nuestros Programas</CardTitle>
+                <CardTitle as="h3">Gestión del Riesgo en Salud</CardTitle>
                 <CardDescription>
                   Descubre cómo te acompañamos con programas de promoción,
-                  prevención y bienestar.
+                  prevención y bienestar para cada necesidad.
                 </CardDescription>
               </CardHeader>
-              <CardContent className="space-y-4">
-                 <Link
-                  href="/afiliados/subsidiado/salud/programas/artritis"
-                  className="group flex items-start gap-4 p-4 rounded-lg hover:bg-muted/50 transition-colors"
-                >
-                  <div className="p-3 bg-primary/10 rounded-full group-hover:bg-primary group-hover:text-primary-foreground">
-                    <Stethoscope className="h-6 w-6 text-primary group-hover:text-primary-foreground" />
-                  </div>
-                  <div>
-                    <h4 className="font-semibold text-foreground">
-                      Artritis Reumatoide
+              <CardContent className="space-y-8">
+                {programGroups.map((group) => (
+                  <div key={group.category} className="space-y-4">
+                    <h4 className="font-bold text-lg text-primary border-b pb-2">
+                      {group.category}
                     </h4>
-                    <p className="text-sm text-muted-foreground">
-                      Información y recursos de nuestro programa de acompañamiento integral.
-                    </p>
+                    <div className="grid gap-2">
+                      {group.programs.map((program) => (
+                        <Link
+                          key={program.title}
+                          href={program.href}
+                          className="group flex items-start gap-4 p-3 rounded-lg hover:bg-muted/50 transition-colors"
+                        >
+                          <div className="p-2 bg-primary/10 rounded-full group-hover:bg-primary group-hover:text-primary-foreground">
+                            {React.cloneElement(program.icon as React.ReactElement, {
+                              className: "h-5 w-5 text-primary group-hover:text-primary-foreground",
+                            })}
+                          </div>
+                          <div>
+                            <h5 className="font-semibold text-foreground group-hover:text-primary">
+                              {program.title}
+                            </h5>
+                            <p className="text-xs text-muted-foreground line-clamp-1">
+                              {program.description}
+                            </p>
+                          </div>
+                        </Link>
+                      ))}
+                    </div>
                   </div>
-                </Link>
-
-                <Link
-                  href="/afiliados/subsidiado/salud/programas/cancer"
-                  className="group flex items-start gap-4 p-4 rounded-lg hover:bg-muted/50 transition-colors"
-                >
-                  <div className="p-3 bg-primary/10 rounded-full group-hover:bg-primary group-hover:text-primary-foreground">
-                    <Activity className="h-6 w-6 text-primary group-hover:text-primary-foreground" />
-                  </div>
-                  <div>
-                    <h4 className="font-semibold text-foreground">
-                      Cáncer
-                    </h4>
-                    <p className="text-sm text-muted-foreground">
-                      Programas de detección temprana y apoyo integral en el tratamiento.
-                    </p>
-                  </div>
-                </Link>
-
-                <Link
-                  href="/afiliados/subsidiado/salud/programas/epoc"
-                  className="group flex items-start gap-4 p-4 rounded-lg hover:bg-muted/50 transition-colors"
-                >
-                  <div className="p-3 bg-primary/10 rounded-full group-hover:bg-primary group-hover:text-primary-foreground">
-                    <Wind className="h-6 w-6 text-primary group-hover:text-primary-foreground" />
-                  </div>
-                  <div>
-                    <h4 className="font-semibold text-foreground">
-                      EPOC
-                    </h4>
-                    <p className="text-sm text-muted-foreground">
-                      Atención integral para la Enfermedad Pulmonar Obstructiva Crónica.
-                    </p>
-                  </div>
-                </Link>
-
-                <Link
-                  href="/afiliados/subsidiado/salud/programas/asma"
-                  className="group flex items-start gap-4 p-4 rounded-lg hover:bg-muted/50 transition-colors"
-                >
-                  <div className="p-3 bg-primary/10 rounded-full group-hover:bg-primary group-hover:text-primary-foreground">
-                    <Activity className="h-6 w-6 text-primary group-hover:text-primary-foreground" />
-                  </div>
-                  <div>
-                    <h4 className="font-semibold text-foreground">
-                      Asma
-                    </h4>
-                    <p className="text-sm text-muted-foreground">
-                      Control y prevención de crisis para una mejor calidad de vida respiratoria.
-                    </p>
-                  </div>
-                </Link>
-
-                <Link
-                  href="/afiliados/subsidiado/salud/programas/eda"
-                  className="group flex items-start gap-4 p-4 rounded-lg hover:bg-muted/50 transition-colors"
-                >
-                  <div className="p-3 bg-primary/10 rounded-full group-hover:bg-primary group-hover:text-primary-foreground">
-                    <Activity className="h-6 w-6 text-primary group-hover:text-primary-foreground" />
-                  </div>
-                  <div>
-                    <h4 className="font-semibold text-foreground">
-                      Enfermedad Diarreica Aguda (EDA)
-                    </h4>
-                    <p className="text-sm text-muted-foreground">
-                      Medidas de prevención y manejo, especialmente en niños.
-                    </p>
-                  </div>
-                </Link>
-
-                <Link
-                  href="/afiliados/subsidiado/salud/programas/ira"
-                  className="group flex items-start gap-4 p-4 rounded-lg hover:bg-muted/50 transition-colors"
-                >
-                  <div className="p-3 bg-primary/10 rounded-full group-hover:bg-primary group-hover:text-primary-foreground">
-                    <Activity className="h-6 w-6 text-primary group-hover:text-primary-foreground" />
-                  </div>
-                  <div>
-                    <h4 className="font-semibold text-foreground">
-                      Infección Respiratoria Aguda (IRA)
-                    </h4>
-                    <p className="text-sm text-muted-foreground">
-                      Prevención y cuidado de infecciones respiratorias en todas las etapas.
-                    </p>
-                  </div>
-                </Link>
-
-                <Link
-                  href="/afiliados/subsidiado/salud/programas/its"
-                  className="group flex items-start gap-4 p-4 rounded-lg hover:bg-muted/50 transition-colors"
-                >
-                  <div className="p-3 bg-primary/10 rounded-full group-hover:bg-primary group-hover:text-primary-foreground">
-                    <ShieldAlert className="h-6 w-6 text-primary group-hover:text-primary-foreground" />
-                  </div>
-                  <div>
-                    <h4 className="font-semibold text-foreground">
-                      Infecciones de Transmisión Sexual (ITS)
-                    </h4>
-                    <p className="text-sm text-muted-foreground">
-                      Educación, prevención y acceso a pruebas para una salud sexual segura.
-                    </p>
-                  </div>
-                </Link>
-
-                <Link
-                  href="/afiliados/subsidiado/salud/programas/vih-sida"
-                  className="group flex items-start gap-4 p-4 rounded-lg hover:bg-muted/50 transition-colors"
-                >
-                  <div className="p-3 bg-primary/10 rounded-full group-hover:bg-primary group-hover:text-primary-foreground">
-                    <Activity className="h-6 w-6 text-primary group-hover:text-primary-foreground" />
-                  </div>
-                  <div>
-                    <h4 className="font-semibold text-foreground">
-                      VIH / SIDA
-                    </h4>
-                    <p className="text-sm text-muted-foreground">
-                      Acompañamiento integral, tratamiento y apoyo para una mejor calidad de vida.
-                    </p>
-                  </div>
-                </Link>
-
-                <Link
-                  href="/afiliados/subsidiado/salud/programas/vacunacion"
-                  className="group flex items-start gap-4 p-4 rounded-lg hover:bg-muted/50 transition-colors"
-                >
-                  <div className="p-3 bg-primary/10 rounded-full group-hover:bg-primary group-hover:text-primary-foreground">
-                    <Syringe className="h-6 w-6 text-primary group-hover:text-primary-foreground" />
-                  </div>
-                  <div>
-                    <h4 className="font-semibold text-foreground">
-                      Esquema de Vacunación
-                    </h4>
-                    <p className="text-sm text-muted-foreground">
-                      Protege tu salud y la de tu familia completando los esquemas de inmunización.
-                    </p>
-                  </div>
-                </Link>
-
-                <Link
-                  href="/afiliados/subsidiado/salud/programas/maternidad"
-                  className="group flex items-start gap-4 p-4 rounded-lg hover:bg-muted/50 transition-colors"
-                >
-                  <div className="p-3 bg-primary/10 rounded-full group-hover:bg-primary group-hover:text-primary-foreground">
-                    <Baby className="h-6 w-6 text-primary group-hover:text-primary-foreground" />
-                  </div>
-                  <div>
-                    <h4 className="font-semibold text-foreground">
-                      Cuidado Materno
-                    </h4>
-                    <p className="text-sm text-muted-foreground">
-                      Acompañamiento integral para una maternidad segura y saludable.
-                    </p>
-                  </div>
-                </Link>
-
-                <Link
-                  href="/afiliados/subsidiado/salud/programas/salud-mental"
-                  className="group flex items-start gap-4 p-4 rounded-lg hover:bg-muted/50 transition-colors"
-                >
-                  <div className="p-3 bg-primary/10 rounded-full group-hover:bg-primary group-hover:text-primary-foreground">
-                    <Brain className="h-6 w-6 text-primary group-hover:text-primary-foreground" />
-                  </div>
-                  <div>
-                    <h4 className="font-semibold text-foreground">
-                      Salud Mental
-                    </h4>
-                    <p className="text-sm text-muted-foreground">
-                      Recursos y apoyo para el bienestar emocional y mental de nuestros afiliados.
-                    </p>
-                  </div>
-                </Link>
-
-                <Link
-                  href="/afiliados/subsidiado/salud/programas/habitos-saludables"
-                  className="group flex items-start gap-4 p-4 rounded-lg hover:bg-muted/50 transition-colors"
-                >
-                  <div className="p-3 bg-primary/10 rounded-full group-hover:bg-primary group-hover:text-primary-foreground">
-                    <Apple className="h-6 w-6 text-primary group-hover:text-primary-foreground" />
-                  </div>
-                  <div>
-                    <h4 className="font-semibold text-foreground">
-                      Hábitos Saludables y Vida Activa
-                    </h4>
-                    <p className="text-sm text-muted-foreground">
-                      Promovemos el bienestar integral a través de la alimentación balanceada y el ejercicio.
-                    </p>
-                  </div>
-                </Link>
-
-                <Link
-                  href="/afiliados/subsidiado/salud/programas/dengue"
-                  className="group flex items-start gap-4 p-4 rounded-lg hover:bg-muted/50 transition-colors"
-                >
-                  <div className="p-3 bg-primary/10 rounded-full group-hover:bg-primary group-hover:text-primary-foreground">
-                    <Bug className="h-6 w-6 text-primary group-hover:text-primary-foreground" />
-                  </div>
-                  <div>
-                    <h4 className="font-semibold text-foreground">
-                      Prevención del Dengue
-                    </h4>
-                    <p className="text-sm text-muted-foreground">
-                      Información sobre prevención, síntomas de alarma y control del mosquito.
-                    </p>
-                  </div>
-                </Link>
-
-                <Link
-                  href="/afiliados/subsidiado/salud/programas/fiebre-amarilla"
-                  className="group flex items-start gap-4 p-4 rounded-lg hover:bg-muted/50 transition-colors"
-                >
-                  <div className="p-3 bg-primary/10 rounded-full group-hover:bg-primary group-hover:text-primary-foreground">
-                    <Activity className="h-6 w-6 text-primary group-hover:text-primary-foreground" />
-                  </div>
-                  <div>
-                    <h4 className="font-semibold text-foreground">
-                      Fiebre Amarilla
-                    </h4>
-                    <p className="text-sm text-muted-foreground">
-                      Información detallada sobre la fiebre amarilla y la importancia de la vacunación.
-                    </p>
-                  </div>
-                </Link>
-
-                <Link
-                  href="/afiliados/subsidiado/salud/programas/donacion-organos"
-                  className="group flex items-start gap-4 p-4 rounded-lg hover:bg-muted/50 transition-colors"
-                >
-                  <div className="p-3 bg-primary/10 rounded-full group-hover:bg-primary group-hover:text-primary-foreground">
-                    <HeartPulse className="h-6 w-6 text-primary group-hover:text-primary-foreground" />
-                  </div>
-                  <div>
-                    <h4 className="font-semibold text-foreground">
-                      Donación de Órganos
-                    </h4>
-                    <p className="text-sm text-muted-foreground">
-                      Un acto de vida: conoce la importancia y el proceso para ser donante.
-                    </p>
-                  </div>
-                </Link>
-
-                <Link
-                  href="/afiliados/subsidiado/salud/programas/enfoque-diferencial"
-                  className="group flex items-start gap-4 p-4 rounded-lg hover:bg-muted/50 transition-colors"
-                >
-                  <div className="p-3 bg-primary/10 rounded-full group-hover:bg-primary group-hover:text-primary-foreground">
-                    <Users className="h-6 w-6 text-primary group-hover:text-primary-foreground" />
-                  </div>
-                  <div>
-                    <h4 className="font-semibold text-foreground">
-                      Enfoque Diferencial
-                    </h4>
-                    <p className="text-sm text-muted-foreground">
-                      Atención inclusiva y pertinente para poblaciones con necesidades específicas.
-                    </p>
-                  </div>
-                </Link>
-                
-                <Link
-                  href="/afiliados/subsidiado/salud/programas"
-                  className="group flex items-start gap-4 p-4 rounded-lg hover:bg-muted/50 transition-colors"
-                >
-                  <div className="p-3 bg-primary/10 rounded-full group-hover:bg-primary group-hover:text-primary-foreground">
-                    <HeartPulse className="h-6 w-6 text-primary group-hover:text-primary-foreground" />
-                  </div>
-                  <div>
-                    <h4 className="font-semibold text-foreground">
-                      Otros Programas de Salud
-                    </h4>
-                    <p className="text-sm text-muted-foreground">
-                      Explora todos nuestros programas de gestión del riesgo en salud.
-                    </p>
-                  </div>
-                </Link>
-
+                ))}
                 <div className="flex justify-center pt-4">
                     <Button asChild variant="outline" className="w-full">
                         <Link href="/afiliados/subsidiado/salud/programas">Ver todos los programas</Link>
