@@ -37,11 +37,9 @@ export const navigationItems: NavItem[] = [
         {
             groups: [
                 {
-                    title: 'Información para el Afiliado',
+                    title: 'Información',
                     links: [
-                        { id: 'sub-info-todo', text: 'Todo sobre tu afiliación', href: '/afiliados/subsidiado/informacion' },
                         { id: 'sub-info-afiliacion', text: 'Afiliación a Emssanar', href: '/afiliados/subsidiado/informacion/afiliacion' },
-                        { id: 'sub-info-derechos', text: 'Derechos y Deberes', href: '/afiliados/subsidiado/informacion/derechos-y-deberes' },
                         { id: 'sub-info-citas', text: 'Canales de citas red de prestadores', href: '/afiliados/subsidiado/informacion/directorio-prestadores' },
                         { id: 'sub-info-movilidad-regimenes', text: 'Movilidad entre regímenes', href: '/afiliados/subsidiado/informacion/movilidad' },
                         { id: 'sub-info-urgencias', text: 'Servicios de urgencias', href: '/afiliados/subsidiado/informacion/urgencias' },
@@ -58,7 +56,6 @@ export const navigationItems: NavItem[] = [
                         { id: 'sub-tramites-guia', text: 'Guía de Trámites', href: '/afiliados/subsidiado/tramites' },
                         { id: 'sub-tramites-afiliacion', text: 'Afiliación', href: '/afiliados/subsidiado/tramites/afiliacion' },
                         { id: 'sub-tramites-certificados', text: 'Certificados', href: '/afiliados/subsidiado/tramites/certificado-afiliacion' },
-                        { id: 'sub-tramites-movilidad', text: 'Movilidad', href: '/afiliados/subsidiado/tramites/movilidad' },
                     ]
                 }
             ]
@@ -69,7 +66,7 @@ export const navigationItems: NavItem[] = [
                     title: 'Cuidado de la salud',
                     links: [
                         { id: 'sub-salud-programas', text: 'Programas de Salud', href: '/afiliados/subsidiado/salud/programas' },
-                        { id: 'sub-salud-habitos', text: 'Hábitos Saludables', href: '/afiliados/subsidiado/salud/programas/habitos-saludables' },
+                        { id: 'sub-salud-nutricion', text: 'Nutrición y Vida Activa', href: '/afiliados/subsidiado/salud/programas/nutricion' },
                         { id: 'sub-salud-mental', text: 'Salud Mental', href: '/afiliados/subsidiado/salud/programas/salud-mental' },
                         { id: 'sub-salud-pyp', text: 'Cursos de vida', href: '/afiliados/subsidiado/salud' },
                     ]
