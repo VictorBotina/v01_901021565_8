@@ -1,4 +1,3 @@
-// src/components/layout/breadcrumbs/Breadcrumbs.tsx
 'use client';
 
 import React, { Fragment } from 'react';
@@ -35,7 +34,8 @@ const pathNameMapping: { [key: string]: string } = {
   "salud-mental": "Salud Mental",
   programas: "Programas de Salud",
   "enfermedades-huerfanas": "Enfermedades Huérfanas",
-  "fiebre-amarilla": "Fiebre Amarilla"
+  "fiebre-amarilla": "Fiebre Amarilla",
+  "prevencion-embarazo-adolescente": "Prevención del Embarazo Adolescente"
 };
 
 // Función para capitalizar la primera letra de un string
