@@ -175,7 +175,7 @@ export default function CuidadoSaludLandingPage() {
                     className="group flex items-start gap-4 p-4 rounded-lg hover:bg-muted/50 transition-colors"
                   >
                     <div className="p-3 bg-primary/10 rounded-full group-hover:bg-primary group-hover:text-primary-foreground">
-                      {React.cloneElement(curso.icon, {
+                      {React.cloneElement(curso.icon as React.ReactElement<{ className?: string }>, {
                         className:
                           "h-6 w-6 text-primary group-hover:text-primary-foreground",
                       })}
@@ -227,7 +227,14 @@ export default function CuidadoSaludLandingPage() {
                           className="group flex items-start gap-4 p-3 rounded-lg hover:bg-muted/50 transition-colors"
                         >
                           <div className="p-2 bg-primary/10 rounded-full group-hover:bg-primary group-hover:text-primary-foreground">
-                            {React.cloneElement(program.icon as React.ReactElement, {
+                            {/* 
+                              DOC: Se utiliza un cast a React.ReactElement<{ className?: string }> 
+                              porque React.cloneElement requiere que el tipo de props del elemento 
+                              sea conocido y acepte las propiedades que se están inyectando. 
+                              Al ser icons genéricos, TypeScript infiere 'unknown' por defecto, 
+                              lo que genera el error TS2769 si no se especifica el tipo.
+                            */}
+                            {React.cloneElement(program.icon as React.ReactElement<{ className?: string }>, {
                               className: "h-5 w-5 text-primary group-hover:text-primary-foreground",
                             })}
                           </div>
