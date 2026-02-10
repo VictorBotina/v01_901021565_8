@@ -116,6 +116,7 @@ const programGroups = [
       { title: "Infecciones de Transmisión Sexual (ITS)", href: "/afiliados/subsidiado/salud/programas/its", icon: <ShieldAlert />, description: "Educación, prevención y acceso a pruebas para una salud sexual segura." },
       { title: "VIH / SIDA", href: "/afiliados/subsidiado/salud/programas/vih-sida", icon: <Activity />, description: "Acompañamiento integral, tratamiento y apoyo para una mejor calidad de vida." },
       { title: "Cuidado Materno", href: "/afiliados/subsidiado/salud/programas/maternidad", icon: <Baby />, description: "Acompañamiento integral para una maternidad segura y saludable." },
+      { title: "Prevención del Embarazo Adolescente", href: "/afiliados/subsidiado/salud/programas/prevencion-embarazo-adolescente", icon: <PersonStanding />, description: "Orientación y servicios para una salud sexual informada y responsable." },
     ]
   },
   {
