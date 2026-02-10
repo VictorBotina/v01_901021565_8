@@ -37,8 +37,9 @@ export const navigationItems: NavItem[] = [
         {
             groups: [
                 {
-                    title: 'Información',
+                    title: 'Información para el Afiliado',
                     links: [
+                        { id: 'sub-info-todo', text: 'Todo sobre tu afiliación', href: '/afiliados/subsidiado/informacion' },
                         { id: 'sub-info-afiliacion', text: 'Afiliación a Emssanar', href: '/afiliados/subsidiado/informacion/afiliacion' },
                         { id: 'sub-info-derechos', text: 'Derechos y Deberes', href: '/afiliados/subsidiado/informacion/derechos-y-deberes' },
                         { id: 'sub-info-citas', text: 'Canales de citas red de prestadores', href: '/afiliados/subsidiado/informacion/directorio-prestadores' },
