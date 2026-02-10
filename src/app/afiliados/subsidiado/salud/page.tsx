@@ -133,6 +133,11 @@ export default function CuidadoSaludLandingPage() {
                     </div>
                   </Link>
                 ))}
+                <div className="flex justify-center pt-4">
+                    <Button asChild variant="outline" className="w-full">
+                        <Link href="/afiliados/subsidiado/salud/cursos-de-vida">Ampliar información</Link>
+                    </Button>
+                </div>
               </CardContent>
             </Card>
           </section>
