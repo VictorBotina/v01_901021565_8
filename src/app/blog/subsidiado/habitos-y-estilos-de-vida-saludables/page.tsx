@@ -20,7 +20,7 @@ const siteUrl = process.env.NEXT_PUBLIC_SITE_URL || 'http://localhost:9002';
 const shareUrl = `${siteUrl}/blog/subsidiado/habitos-y-estilos-de-vida-saludables`;
 
 const queryParams = {
-    fields: ['title', 'description', 'date'],
+    fields: ['title', 'description', 'date', 'slug', 'keywords'],
     populate: {
         author: { fields: ['name', 'bio'], populate: { avatar: { fields: ['url'] } } },
         category: { fields: ['name', 'slug'] },
@@ -46,6 +46,7 @@ export async function generateMetadata(): Promise<Metadata> {
   return {
     title: article.title,
     description: article.description,
+    keywords: article.keywords, // SEO mejorado con keywords de Strapi
     openGraph: { title: article.title, description: article.description, url: shareUrl, type: 'article', images: [{ url: ogImageUrl, width: 1200, height: 630, alt: article.title }] },
     twitter: { card: 'summary_large_image', title: article.title, description: article.description, images: [ogImageUrl] },
   };
