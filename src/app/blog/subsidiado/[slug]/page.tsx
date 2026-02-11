@@ -37,6 +37,7 @@ export async function generateMetadata({ params }: { params: Promise<{ slug: str
   return {
     title: article.title,
     description: article.description,
+    keywords: article.keywords, // Uso del nuevo campo keywords
     openGraph: {
       title: article.title,
       description: article.description,

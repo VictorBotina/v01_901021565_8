@@ -13,7 +13,7 @@ export async function getArticles(categoryName?: string): Promise<Article[]> {
   'use cache';
   const params: any = {
     sort: { date: 'desc' },
-    fields: ["title", "description", "date"],
+    fields: ["title", "description", "date", "slug", "keywords"],
     populate: {
       image: { fields: ["url", "formats"] },
       author: { fields: ["name"] },
@@ -54,7 +54,7 @@ export async function getArticleById(id: string): Promise<Article | null> {
   if (!id) return null;
   
   const params = {
-    fields: ["title", "description", "date", "slug"],
+    fields: ["title", "description", "date", "slug", "keywords"],
     populate: {
       image: { fields: ["url"] },
       category: { fields: ["name", "slug"] },
@@ -84,7 +84,7 @@ export async function getArticleBySlug(slug: string): Promise<Article | null> {
   'use cache';
   const params = {
     filters: { slug: { $eq: slug } },
-    fields: ["title", "description", "date", "slug"],
+    fields: ["title", "description", "date", "slug", "keywords"],
     populate: {
       image: { fields: ["url", "formats"] },
       category: { fields: ["name", "slug"] },

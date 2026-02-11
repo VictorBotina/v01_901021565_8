@@ -61,6 +61,7 @@ export interface Article {
   id: number;
   title: string;
   description: string;
+  keywords?: string; // Nuevo campo para SEO
   slug: string;
   date: string; // Mantener como string, se formatea en el frontend
   createdAt: string;
