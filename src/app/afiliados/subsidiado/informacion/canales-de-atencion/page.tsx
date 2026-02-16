@@ -1,4 +1,5 @@
 // src/app/afiliados/subsidiado/informacion/canales-de-atencion/page.tsx
+//test
 import type { Metadata } from 'next';
 import { Card, CardHeader, CardTitle, CardContent, CardFooter } from "@/components/ui/card";
 import { Badge } from "@/components/ui/badge";
