@@ -3,6 +3,7 @@ import { Card, CardHeader, CardTitle, CardContent, CardDescription } from "@/com
 import { Button } from "@/components/ui/button";
 import { Alert, AlertDescription, AlertTitle } from "@/components/ui/alert";
 import { ArticleSection } from "@/components/articles/ArticleSection";
+import Image from "next/image";
 import { 
   Stethoscope, 
   Activity, 
@@ -19,9 +20,29 @@ import Link from "next/link";
 import React from 'react';
 
 export const metadata: Metadata = {
+  title: '¿Te duelen las articulaciones todos los días? Podría ser Artritis Reumatoide',
+  description: 'Informar el programa de salud de Artritis Reumatoide de forma fácil y segura',
+  keywords: ['Emssanar EPS', 'Afiliación en salud', 'Régimen subsidiado', 'Prevención en salud', 'Artritis reumatoide', 'cuidado de salud'],
+  openGraph: {
     title: '¿Te duelen las articulaciones todos los días? Podría ser Artritis Reumatoide',
     description: 'Informar el programa de salud de Artritis Reumatoide de forma fácil y segura',
-    keywords: ['Emssanar EPS', 'Afiliación en salud', 'Régimen subsidiado', 'Prevención en salud', 'Artritis reumatoide', 'cuidado de salud'],
+    url: `/afiliados/subsidiado/salud/programas/artritis`,
+    type: 'website',
+    images: [
+      {
+        url: `/images/img-sub/canales-atencion-emssanar-eps-img16022026.webp`,
+        width: 1200,
+        height: 630,
+        alt: 'Programa de la Salud: Artritis Reumatoide',
+      }
+    ]
+  },
+  twitter: {
+    card: 'summary_large_image',
+    title: '¿Te duelen las articulaciones todos los días? Podría ser Artritis Reumatoide',
+    description: 'Informar el programa de salud de Artritis Reumatoide de forma fácil y segura',
+    images: [`/images/img-sub/canales-atencion-emssanar-eps-img16022026.webp`],
+  }
 };
 
 export default function ArtritisPage() {
@@ -33,6 +54,17 @@ export default function ArtritisPage() {
           <h1 className="text-3xl md:text-5xl font-extrabold tracking-tight text-title mb-6 leading-tight">
             ¿Te duelen las articulaciones todos los días? Podría ser Artritis Reumatoide
           </h1>
+
+          <div className="relative w-full aspect-[21/9] md:aspect-[3/1] rounded-2xl overflow-hidden shadow-xl mb-8">
+            <Image 
+              src="/images/img-sub/canales-atencion-emssanar-eps-img16022026.webp"
+              alt="Cabecera Programa Artritis Reumatoide Emssanar EPS"
+              fill
+              className="object-cover"
+              priority
+            />
+          </div>
+
           <p className="text-xl md:text-2xl text-primary font-medium italic">
             "Inflamación, dolor y cansancio: lo que debes saber sobre la Artritis Reumatoide"
           </p>
@@ -147,6 +179,32 @@ export default function ArtritisPage() {
             </Alert>
           </section>
 
+          {/* Action Section */}
+          <section className="bg-primary/5 rounded-3xl p-8 md:p-12 text-center space-y-6 border border-primary/10">
+            <h2 className="text-3xl font-bold text-title">¿Por qué es tan importante actuar a tiempo?</h2>
+            <p className="text-lg text-muted-foreground max-w-3xl mx-auto leading-relaxed">
+              En la artritis reumatoide, el tiempo es un factor determinante. Los primeros meses desde el inicio de los síntomas son fundamentales para iniciar tratamiento y prevenir daño permanente. Un diagnóstico temprano permite:
+            </p>
+            <div className="grid sm:grid-cols-2 md:grid-cols-3 gap-4 pt-4">
+                {[
+                    "Reducir la inflamación",
+                    "Proteger las articulaciones",
+                    "Evitar deformidades",
+                    "Disminuir el dolor",
+                    "Preservar la movilidad",
+                    "Mejorar la calidad de vida"
+                ].map((item, i) => (
+                    <div key={i} className="flex items-center gap-2 bg-background p-3 rounded-lg border shadow-sm">
+                        <CheckCircle2 className="h-5 w-5 text-primary shrink-0" />
+                        <span className="text-sm font-medium">{item}</span>
+                    </div>
+                ))}
+            </div>
+            <p className="font-semibold text-primary pt-4 italic">
+                La intervención oportuna puede cambiar el curso de la enfermedad.
+            </p>
+          </section>
+
           {/* Treatment & Self-care */}
           <section className="space-y-12">
             <div className="text-center">
@@ -194,19 +252,19 @@ export default function ArtritisPage() {
           </section>
 
           {/* Support Section */}
-          <section className="bg-primary text-primary-foreground rounded-3xl p-8 md:p-12 text-center space-y-6">
+          <section className="bg-primary text-primary-foreground rounded-3xl p-8 md:p-12 text-center space-y-6 shadow-2xl">
             <Users className="h-16 w-16 mx-auto opacity-80" />
             <h2 className="text-3xl font-bold">No estás solo</h2>
-            <p className="text-lg max-w-3xl mx-auto opacity-90">
-              Vivir con una enfermedad crónica puede generar incertidumbre o temor. Participar activamente en tu tratamiento y apoyarte en familiares, amigos o grupos de apoyo fortalece tu proceso.
+            <p className="text-lg max-w-3xl mx-auto opacity-90 leading-relaxed">
+              Vivir con una enfermedad crónica puede generar incertidumbre, frustración o temor. Es normal sentirlo. Pero no tienes que enfrentarlo sin apoyo. Informarte sobre tu diagnóstico, participar activamente en las decisiones de tu tratamiento y apoyarte en familiares, amigos o grupos de apoyo fortalece tu proceso.
             </p>
             <p className="text-xl font-semibold italic">"La red de apoyo también es medicina"</p>
           </section>
 
           {/* Route & Action */}
-          <section className="text-center space-y-8 py-8">
+          <section className="text-center space-y-8 py-8 border-y">
             <div className="space-y-4">
-              <h2 className="text-3xl font-bold">Ruta de atención y acompañamiento</h2>
+              <h2 className="text-3xl font-bold text-title">Ruta de atención y acompañamiento</h2>
               <p className="text-muted-foreground max-w-2xl mx-auto">
                 Si presentas síntomas compatibles con artritis reumatoide, conoce los pasos para acceder a un diagnóstico y tratamiento oportuno.
               </p>
@@ -218,6 +276,42 @@ export default function ArtritisPage() {
                 </Link>
               </Button>
             </div>
+            <p className="text-sm text-muted-foreground italic">La orientación adecuada reduce tiempos y mejora resultados.</p>
+          </section>
+
+          {/* Complications & Impact */}
+          <section className="grid md:grid-cols-2 gap-12">
+            <div className="space-y-6">
+                <h2 className="text-3xl font-bold text-title">La importancia del acompañamiento integral</h2>
+                <p className="text-muted-foreground leading-relaxed">
+                    La Artritis Reumatoide no solo afecta el cuerpo, también puede impactar el bienestar emocional. El dolor crónico puede generar frustración, ansiedad o tristeza. Por eso, el tratamiento integral incluye acompañamiento médico continuo y, en algunos casos, apoyo psicológico.
+                </p>
+                <p className="text-muted-foreground leading-relaxed">
+                    Con un manejo adecuado, muchas personas con Artritis Reumatoide pueden llevar una vida activa y productiva.
+                </p>
+            </div>
+            <Card className="border-primary/20">
+                <CardHeader>
+                    <CardTitle className="text-title">Complicaciones si no se trata</CardTitle>
+                    <CardDescription>La detección y el tratamiento temprano no son opcionales: son esenciales.</CardDescription>
+                </CardHeader>
+                <CardContent>
+                    <ul className="space-y-3">
+                        {[
+                            "Daño irreversible en las articulaciones",
+                            "Limitación funcional severa",
+                            "Mayor riesgo cardiovascular",
+                            "Afectación pulmonar en algunos casos",
+                            "Impacto emocional significativo"
+                        ].map((item, i) => (
+                            <li key={i} className="flex items-start gap-2 text-sm text-muted-foreground">
+                                <div className="mt-1.5 h-1.5 w-1.5 rounded-full bg-primary shrink-0" />
+                                {item}
+                            </li>
+                        ))}
+                    </ul>
+                </CardContent>
+            </Card>
           </section>
 
           {/* Professional Resources */}
@@ -231,7 +325,7 @@ export default function ArtritisPage() {
                 <div className="flex flex-col md:flex-row gap-6">
                   <div className="flex-1 space-y-4">
                     <p className="text-sm">
-                      Consulta la <strong>Guía de Práctica Clínica No. 26</strong>: “Detección temprana, diagnóstico y tratamiento de la artritis reumatoide”, un documento basado en la mejor evidencia científica.
+                      Consulta la <strong>Guía de Práctica Clínica No. 26</strong>: “Detección temprana, diagnóstico y tratamiento de la artritis reumatoide”, un documento basado en la mejor evidencia científica que orienta una atención oportuna e integral.
                     </p>
                     <Button asChild variant="outline" size="sm" className="w-full sm:w-auto">
                       <Link href="https://drive.google.com/file/d/1MqR5-_MCTgZqjY6nqbmifDpJq3AxfJ-s/view" target="_blank">
@@ -242,7 +336,7 @@ export default function ArtritisPage() {
                   </div>
                   <div className="flex-1 space-y-4">
                     <p className="text-sm">
-                      Accede a más información en el portal de Guías de Práctica Clínica del Ministerio de Salud.
+                      Accede a más información en el portal de Guías de Práctica Clínica del Ministerio de Salud. El conocimiento científico fortalece la atención.
                     </p>
                     <Button asChild variant="outline" size="sm" className="w-full sm:w-auto">
                       <Link href="https://gpc.minsalud.gov.co" target="_blank">
@@ -260,7 +354,7 @@ export default function ArtritisPage() {
           <section className="text-center pt-8 border-t">
             <h2 className="text-3xl font-bold text-primary mb-4">Vivir con artritis reumatoide es posible</h2>
             <p className="text-lg text-muted-foreground max-w-3xl mx-auto leading-relaxed">
-              La artritis reumatoide no define quién eres ni determina tus sueños. Con un diagnóstico temprano y hábitos saludables, es posible mantener la movilidad y conservar tu independencia. Escuchar al cuerpo es el primer paso. Cuidarte es una forma de proteger tu futuro.
+              La artritis reumatoide no define quién eres ni determina tus sueños. Con un diagnóstico temprano, tratamiento adecuado y hábitos saludables, es posible mantener la movilidad y conservar tu independencia. Escuchar al cuerpo es el primer paso. Cuidarte es una forma de proteger tu futuro.
             </p>
           </section>
 
