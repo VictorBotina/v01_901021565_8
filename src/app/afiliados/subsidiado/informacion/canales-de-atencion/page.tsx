@@ -1,5 +1,5 @@
 // src/app/afiliados/subsidiado/informacion/canales-de-atencion/page.tsx
-//test
+//og image
 import type { Metadata } from 'next';
 import { Card, CardHeader, CardTitle, CardContent, CardFooter } from "@/components/ui/card";
 import { Badge } from "@/components/ui/badge";
@@ -24,10 +24,6 @@ import {
 import Link from "next/link";
 import React from 'react';
 
-
-const baseUrl = process.env.NODE_ENV === 'production'
-  ? process.env.NEXT_PUBLIC_BASE_URL // Usa variable de entorno si existe
-  : 'http://localhost:3000';
   
 export const metadata: Metadata = {
   title: 'Canales de atención de Emssanar EPS para ti',
