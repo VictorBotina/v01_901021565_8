@@ -4,6 +4,26 @@ import { FeedbackSection } from "@/components/layout/home/FeedbackSection";
 import { PlaceHolderImages } from "@/lib/placeholder-images";
 import { InfoPopup } from "@/components/ui/popup";
 import { cookies } from "next/headers";
+import type { Metadata } from 'next';
+
+export const metadata: Metadata = {
+  title: 'Emssanar EPS | Aliado en Salud del Suroccidente Colombiano',
+  description: '¡Bienvenido a EMSSANAR EPS S.A.S! Somos tu aliado en salud en el Suroccidente colombiano, abarcando 102 municipios.',
+  keywords: [
+    "Emssanar EPS",
+    "EPS Emssanar Colombia",
+    "Emssanar suroccidente",
+    "Emssanar EPS afiliación",
+    "Emssanar EPS servicios de salud",
+    "Emssanar EPS contacto",
+    "Emssanar EPS teléfono",
+    "Emssanar EPS oficinas",
+    "Emssanar EPS Nariño",
+    "Emssanar EPS Valle del Cauca",
+    "Emssanar EPS Cauca",
+    "Emssanar EPS Putumayo"
+  ],
+};
 
 export default async function Home() {
   const cookieStore = await cookies();
