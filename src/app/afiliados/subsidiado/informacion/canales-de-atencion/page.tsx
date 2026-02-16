@@ -40,6 +40,7 @@ export const metadata: Metadata = {
         url: `/images/img-sub/canales-atencion-emssanar-eps-img16022026.webp`,
         width: 1200,
         height: 630,
+        
         alt: 'Canales de Atención Emssanar EPS',
       }
     ]

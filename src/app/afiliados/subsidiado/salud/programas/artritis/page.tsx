@@ -30,10 +30,10 @@ export const metadata: Metadata = {
     type: 'website',
     images: [
       {
-        url: `/images/img-sub/canales-atencion-emssanar-eps-img16022026.webp`,
+        url: `/images/img-sub/artritis-reumatoide-img16022026.webp`,
         width: 1200,
         height: 630,
-        alt: 'Programa de la Salud: Artritis Reumatoide',
+        alt: 'Artritis Reumatoide',
       }
     ]
   },
@@ -41,7 +41,7 @@ export const metadata: Metadata = {
     card: 'summary_large_image',
     title: '¿Te duelen las articulaciones todos los días? Podría ser Artritis Reumatoide',
     description: 'Informar el programa de salud de Artritis Reumatoide de forma fácil y segura',
-    images: [`/images/img-sub/canales-atencion-emssanar-eps-img16022026.webp`],
+    images: [`/images/img-sub/artritis-reumatoide-img16022026.webp`],
   }
 };
 
@@ -57,7 +57,7 @@ export default function ArtritisPage() {
 
           <div className="relative w-full aspect-[21/9] md:aspect-[3/1] rounded-2xl overflow-hidden shadow-xl mb-8">
             <Image 
-              src="/images/img-sub/canales-atencion-emssanar-eps-img16022026.webp"
+              src="/images/img-sub/artritis-reumatoide-img16022026.webp"
               alt="Cabecera Programa Artritis Reumatoide Emssanar EPS"
               fill
               className="object-cover"
