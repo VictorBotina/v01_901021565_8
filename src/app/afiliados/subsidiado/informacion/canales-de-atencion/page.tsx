@@ -3,6 +3,7 @@ import type { Metadata } from 'next';
 import { Card, CardHeader, CardTitle, CardContent, CardFooter } from "@/components/ui/card";
 import { Badge } from "@/components/ui/badge";
 import { Button } from "@/components/ui/button";
+import Image from "next/image";
 import { 
   Phone, 
   Globe, 
@@ -17,8 +18,7 @@ import {
   Instagram,
   Twitter,
   Youtube,
-  Share2,
-  ArrowRight
+  Share2
 } from "lucide-react";
 import Link from "next/link";
 import React from 'react';
@@ -118,9 +118,20 @@ export default function CanalesAtencionPage() {
   return (
     <div className="container mx-auto px-4 py-8 md:py-12">
       <header className="mb-12 text-center max-w-4xl mx-auto">
-        <h1 className="text-3xl md:text-4xl font-extrabold tracking-tight text-title mb-4">
+        <h1 className="text-3xl md:text-4xl font-extrabold tracking-tight text-title mb-6">
           Canales de atención de Emssanar EPS para ti
         </h1>
+        
+        <div className="relative w-full aspect-[21/9] md:aspect-[3/1] rounded-2xl overflow-hidden shadow-xl mb-8">
+          <Image 
+            src="/images/img-sub/canales-atencion-emssanar-eps-img16022026.webp"
+            alt="Cabecera Canales de Atención Emssanar EPS"
+            fill
+            className="object-cover"
+            priority
+          />
+        </div>
+
         <p className="text-xl text-primary font-semibold mb-6">
           Comunícate con Emssanar EPS cuando lo necesites
         </p>
