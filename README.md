@@ -22,13 +22,13 @@ git remote set-url origin https://github.com/VictorBotina/v01_901021565_8.git
 git add .
 
 # Guardar los cambios localmente
-git commit -m "Sincronización de proyecto con repositorio v01"
+git commit -m "Sincronización de proyecto con repositorio v01 y mejoras SEO"
 
-# Subir los cambios a GitHub
+# Subir los cambios a GitHub (forzar si es necesario)
 git push -u origin main
 ```
 
-### Resolución de Conflictos (Si el repo ya tiene contenido)
+### Resolución de Conflictos (Si el repo ya tiene contenido diferente)
 Si recibes un error al hacer el push porque el historial es diferente, utiliza:
 ```bash
 git push -f origin main
@@ -41,4 +41,4 @@ git push -f origin main
 - `src/ai/`: Lógica de Inteligencia Artificial con Genkit.
 
 ---
-*Nota: No se deben modificar archivos de configuración de entorno sin previa autorización.*
+*Nota: Se ha configurado la URL de producción en el layout para asegurar el funcionamiento de los metadatos SEO.*

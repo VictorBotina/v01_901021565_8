@@ -27,6 +27,16 @@ export const metadata: Metadata = {
   title: 'Canales de atención de Emssanar EPS para ti',
   description: 'Conoce los canales de atención de Emssanar EPS y comunícate fácilmente para gestionar solicitudes, recibir información y atención oportuna.',
   keywords: ['Canales de atención', 'Contacto Emssanar EPS', 'Atención al usuario', 'Comunicación EPS', 'Servicios en línea', 'Atención 24/7', 'PQRD', 'Afiliados Emssanar'],
+  openGraph: {
+    images: [
+      {
+        url: '/images/img-sub/canales-atencion-emssanar-eps-img16022026.webp',
+        width: 1200,
+        height: 630,
+        alt: 'Canales de Atención Emssanar EPS',
+      }
+    ]
+  }
 };
 
 const TikTokIcon = (props: React.SVGProps<SVGSVGElement>) => (

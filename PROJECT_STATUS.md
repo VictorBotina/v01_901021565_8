@@ -14,6 +14,11 @@ Este documento certifica que el sistema ha sido actualizado siguiendo la documen
 - **Turbopack File System Caching**: Activado por defecto.
 - **Directiva `use cache`**: Aplicada en servicios de Strapi y Supabase.
 
+### SEO y Accesibilidad
+- **MetadataBase**: Configurada para producción (`https://front-901021565-8.vercel.app`).
+- **Open Graph**: Implementado con imágenes personalizadas por página para evitar errores 403.
+- **Canales de Atención**: Página institucional completada con imagen y contenido SEO optimizado.
+
 ### Integración con Strapi
 - **Sincronización de Esquema**: El Content-Type `Article` ya soporta `slug` y `keywords`.
 - **Navegación Semántica**: Uso de slugs nativos para SEO.
@@ -23,4 +28,4 @@ El proyecto ha sido configurado para sincronizarse con el repositorio de producc
 `https://github.com/VictorBotina/v01_901021565_8`
 
 ---
-*Documento actualizado - 10 de febrero de 2026 (Repositorio v01 configurado).*
+*Documento actualizado - 10 de febrero de 2026 (Sincronización de producción completada).*
