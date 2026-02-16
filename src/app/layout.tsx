@@ -15,8 +15,8 @@ import { PlaceHolderImages } from "@/lib/placeholder-images";
 
 const inter = Inter({ subsets: ["latin"], variable: "--font-sans" });
 
-// URL de producción para resolver correctamente los metadatos y Open Graph
-const siteUrl = process.env.NEXT_PUBLIC_SITE_URL || 'https://front-901021565-8.vercel.app';
+// URL de producción corregida para resolver correctamente los metadatos y Open Graph
+const siteUrl = process.env.NEXT_PUBLIC_SITE_URL || 'https://v01-901021565-8.vercel.app';
 
 export const metadata: Metadata = {
   title: {

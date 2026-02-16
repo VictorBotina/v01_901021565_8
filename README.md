@@ -8,6 +8,7 @@ Este documento describe la arquitectura de la aplicación Next.js, sus tecnolog�
 - **IA:** Genkit (Firebase)
 - **CMS:** Strapi
 - **Base de Datos:** Supabase
+- **URL de Producción:** https://v01-901021565-8.vercel.app
 
 ## 2. Control de Versiones (GitHub)
 
@@ -24,8 +25,8 @@ git add .
 # Guardar los cambios localmente
 git commit -m "Sincronización de proyecto con repositorio v01 y mejoras SEO"
 
-# Subir los cambios a GitHub (forzar si es necesario)
-git push -u origin main
+# Subir los cambios a GitHub (forzar si es necesario para sincronizar historiales)
+git push -f origin main
 ```
 
 ### Resolución de Conflictos (Si recibes error non-fast-forward)
@@ -41,4 +42,4 @@ git push -f origin main
 - `src/ai/`: Lógica de Inteligencia Artificial con Genkit.
 
 ---
-*Nota: Se ha configurado la URL de producción en el layout para asegurar el funcionamiento de los metadatos SEO.*
+*Nota: Se ha configurado la URL de producción oficial en el layout para asegurar que las imágenes de Open Graph sean accesibles sin errores 400/403.*
