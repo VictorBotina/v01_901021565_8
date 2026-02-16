@@ -24,7 +24,7 @@ import Link from "next/link";
 import React from 'react';
 import { ArticleSection } from "@/components/articles/ArticleSection";
 
-const siteUrl = 'https://v01-901021565-8.vercel.app';
+//const siteUrl = process.env.NEXT_PUBLIC_SITE_URL;
   
 export const metadata: Metadata = {
   title: 'Canales de atención de Emssanar EPS para ti',
@@ -33,11 +33,11 @@ export const metadata: Metadata = {
   openGraph: {
     title: 'Canales de atención de Emssanar EPS para ti',
     description: 'Conoce los canales de atención de Emssanar EPS y comunícate fácilmente para gestionar solicitudes, recibir información y atención oportuna.',
-    url: `${siteUrl}/afiliados/subsidiado/informacion/canales-de-atencion`,
+    url: `/afiliados/subsidiado/informacion/canales-de-atencion`,
     type: 'website',
     images: [
       {
-        url: `${siteUrl}/images/img-sub/canales-atencion-emssanar-eps-img16022026.webp`,
+        url: `/images/img-sub/canales-atencion-emssanar-eps-img16022026.webp`,
         width: 1200,
         height: 630,
         alt: 'Canales de Atención Emssanar EPS',
@@ -48,7 +48,7 @@ export const metadata: Metadata = {
     card: 'summary_large_image',
     title: 'Canales de atención de Emssanar EPS para ti',
     description: 'Conoce los canales de atención de Emssanar EPS y comunícate fácilmente para gestionar solicitudes, recibir información y atención oportuna.',
-    images: [`${siteUrl}/images/img-sub/canales-atencion-emssanar-eps-img16022026.webp`],
+    images: [`/images/img-sub/canales-atencion-emssanar-eps-img16022026.webp`],
   }
 };
 

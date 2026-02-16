@@ -15,8 +15,7 @@ import { PlaceHolderImages } from "@/lib/placeholder-images";
 
 const inter = Inter({ subsets: ["latin"], variable: "--font-sans" });
 
-// URL de producción corregida para resolver correctamente los metadatos y Open Graph
-const siteUrl = process.env.NEXT_PUBLIC_SITE_URL || 'https://v01-901021565-8.vercel.app';
+const siteUrl = process.env.NEXT_PUBLIC_SITE_URL || "https://v01-901021565-8.vercel.app";
 
 export const metadata: Metadata = {
   title: {
@@ -44,7 +43,7 @@ export const metadata: Metadata = {
     card: "summary_large_image",
     title: "Entidad Digital - Salud y Bienestar a tu Alcance",
     description: "Sitio institucional modular, accesible y escalable, enfocado en servicios de salud.",
-    images: ['/default-og.jpg'],
+    images: ['/default-og.webp'],
   },
   metadataBase: new URL(siteUrl),
 };

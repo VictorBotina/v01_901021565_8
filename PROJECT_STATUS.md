@@ -23,24 +23,23 @@ Para que el sitio funcione correctamente en el despliegue, deben configurarse la
 ## 3. Inventario de Mejoras Implementadas
 
 ### Seguridad y Credenciales
-- **Variables de Entorno**: Se ha validado que las URLs y API Keys de Supabase y Strapi **NO están hardcoded** en el código. Se consumen dinámicamente desde `process.env` en servicios del lado del servidor.
-
-### Rendimiento y Tooling (Next.js 16.1)
-- **Turbopack File System Caching**: Activado por defecto.
-- **Directiva `use cache`**: Aplicada en servicios de Strapi y Supabase.
+- **Variables de Env**: Consumidas dinámicamente mediante `process.env` en Server Actions. No hay llaves hardcoded.
 
 ### SEO y Accesibilidad (Optimizado)
 - **MetadataBase**: Configurada para producción (`https://v01-901021565-8.vercel.app`).
-- **Resolución de Error 400/403**: Se ha corregido la URL base del sitio para que los rastreadores accedan a los recursos estáticos.
-- **Gestión de Imágenes**: Se ha identificado que archivos de ~107 bytes son punteros de Git LFS. **Recomendación:** Asegurar que las imágenes se suban como archivos binarios reales si el entorno de despliegue no soporta LFS directamente.
+- **Open Graph**: Resolución de imágenes corregida para evitar errores 400/403.
+- **Gestión de Imágenes**: Identificación de punteros Git LFS (107 bytes). Se requiere carga de binarios reales para visualización en OG.
+
+### Multimedia y Video
+- **YouTube**: Se utiliza integración **nativa vía `<iframe>`**. No se dependen de paquetes externos adicionales, optimizando el bundle de JavaScript.
+- **Utilidades**: Función `getYoutubeEmbedUrl` implementada en componentes de blog para transformar URLs dinámicamente.
 
 ### Integración con Strapi
-- **Sincronización de Esquema**: El Content-Type `Article` ya soporta `slug` y `keywords`.
-- **Navegación Semántica**: Uso de slugs nativos para SEO.
+- **Sincronización de Esquema**: Soporte nativo para `slug`, `keywords` y `content` dinámico.
 
-## 4. Control de Versiones (Git)
-El proyecto debe sincronizarse mediante:
-`git push -f origin main`
+## 4. Gestión de Noticias (Arquitectura Híbrida)
+- **Dinámico (Strapi)**: Blog principal y artículos detallados.
+- **Local (JSON)**: Componente `ArticleSection` consume `public/articles.json` para máxima disponibilidad y rendimiento en landings.
 
 ---
-*Documento actualizado - 10 de febrero de 2026 (Validación de seguridad de variables de entorno).*
+*Documento actualizado - 10 de febrero de 2026 (Documentación de multimedia y video).*
