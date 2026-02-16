@@ -1,61 +1,64 @@
 # Estado Actual del Proyecto - Migración a Next.js 16.1
 
-Este documento certifica que el sistema ha sido actualizado siguiendo la documentación oficial de la rama 16.
+Este documento certifica que el sistema ha sido actualizado siguiendo la documentación oficial de la rama 16 y sirve como guía de referencia para el desarrollo de nuevas secciones.
 
 ## 1. Versiones de Core y Env
-El sistema utiliza las versiones más recientes disponibles en el canal estable para habilitar las nuevas capacidades de Turbopack y optimización.
-
 - **Next.js:** `latest` (Rama 16.1).
 - **React / React-DOM:** `latest` (React 19+).
 - **TypeScript:** `^5.x`
-- **Node.js Recomendado:** >=20.x
+- **URL de Producción Oficial:** `https://v01-901021565-8.vercel.app`
 
-## 2. Inventario de Mejoras Implementadas
+## 2. Configuración de Entorno (Producción)
+Variables requeridas en el panel de Vercel para el funcionamiento de servicios dinámicos:
 
-### Rendimiento y Tooling (Next.js 16.1)
-- **Turbopack File System Caching**: Activado por defecto.
-- **Directiva `use cache`**: Aplicada en servicios de Strapi y Supabase para tiempos de respuesta ultra-rápidos.
+| Variable | Uso | Estado |
+| :--- | :--- | :--- |
+| `NEXT_PUBLIC_SITE_URL` | SEO y Open Graph (Debe ser `https://v01-901021565-8.vercel.app`) | Configurado |
+| `NEXT_PUBLIC_STRAPI_API_URL` | Conexión CMS Strapi | Requerido |
+| `NEXT_PUBLIC_STRAPI_API_TOKEN` | Token de acceso Strapi | Requerido |
+| `NEXT_PUBLIC_SUPABASE_URL` | Base de Datos Oficinas | Requerido |
+| `NEXT_PUBLIC_SUPABASE_API_KEY` | Key de acceso Supabase | Requerido |
 
-### Integración con Strapi (Actualizado Febrero 2026)
-- **Sincronización de Esquema completada**: El Content-Type `Article` ya cuenta con los campos `slug` y `keywords`.
-- **SEO Dinámico**: Las páginas de artículos ahora consumen `description` para meta-descripción y `keywords` para posicionamiento orgánico.
-- **Navegación Semántica**: El sistema ya no depende de IDs numéricos en las URLs, utilizando el campo `slug` de forma nativa.
+## 3. Guía de Referencia: Estructura de Páginas (Modelo "Canales de Atención")
+Para agregar nuevas páginas, se debe seguir la estructura probada en `/afiliados/subsidiado/informacion/canales-de-atencion`:
 
-## 3. Documentación del Modelo de Datos (Esquema Article)
+### A. Metadatos SEO y Open Graph
+Toda página debe exportar un objeto `metadata` para garantizar el posicionamiento y la correcta visualización al compartir:
+```typescript
+export const metadata: Metadata = {
+  title: 'Título Descriptivo y Atractivo',
+  description: 'Resumen de 150-160 caracteres para buscadores.',
+  keywords: ['palabra clave 1', 'palabra clave 2'],
+  openGraph: {
+    title: 'Título para Redes Sociales',
+    description: 'Descripción para Redes Sociales',
+    url: '/ruta-de-la-pagina',
+    images: [{ url: '/ruta-imagen.webp', width: 1200, height: 630 }]
+  }
+};
+```
 
-Basado en la URL de producción proporcionada:
+### B. Gestión de Imágenes
+- **Optimización**: Usar el componente `Image` de `next/image`.
+- **Contenedores**: Envolver la imagen en un `div` con `relative` y `aspect-ratio` para evitar saltos de diseño (CLS).
+- **SEO**: Siempre incluir el atributo `alt` descriptivo.
 
-### Campos de Primer Nivel
-- `id`: Identificador único.
-- `title`: Título principal.
-- `description`: Usado como Meta-Description.
-- `keywords`: Palabras clave para SEO.
-- `slug`: Identificador amigable para la URL.
-- `date`: Fecha de publicación.
+### C. Estructura de Contenido (UX/UI)
+1. **Header**: Título H1 claro, imagen hero opcional y breve introducción.
+2. **Secciones de Rejilla (Grid)**: Usar `Card` de ShadCN para agrupar servicios o ítems repetitivos.
+3. **Componentización de Datos**: Almacenar datos repetitivos (como canales o redes sociales) en constantes/arrays y usar `.map()` para renderizar.
+4. **Llamadas a la Acción (CTA)**: Usar `Button` con variantes `outline` o `default`.
 
-### Relaciones
-- `author`: Incluye `name`, `bio` y `avatar`.
-- `category`: Incluye `name`.
-- `image`: Imagen destacada.
-- `content`: Array dinámico con `title_seccion`, `text` (RichText) y `media_url`.
+### D. Integración de Componentes Híbridos
+- **ArticleSection**: Al final de cada landing importante, incluir `<ArticleSection title="Título de la Sección" />` para mostrar noticias locales desde `articles.json`.
 
-## 4. Gestión de Noticias y Artículos (Arquitectura Híbrida)
+## 4. Multimedia y Video (Estándar Nativo)
+- **YouTube**: Se utiliza integración **nativa vía `<iframe>`**. 
+- **Ventaja**: No depende de paquetes externos, optimizando el bundle de JavaScript.
+- **Implementación**: Envolver el iframe en un `div` con `aspect-video` para responsividad.
 
-El sistema maneja las noticias mediante dos flujos distintos según el componente:
-
-### A. Flujo Dinámico (CMS Strapi)
-- **Ubicación**: `/blog`, `/blog/subsidiado`, etc.
-- **Servicio**: `src/app/services/articleService.ts`.
-- **Características**: Contenido administrable en tiempo real, SEO dinámico por artículo y persistencia en base de datos externa.
-
-### B. Flujo Local (Componente ArticleSection)
-- **Ubicación**: `/afiliados/subsidiado` y otras landings.
-- **Componente**: `src/components/articles/ArticleSection.tsx`.
-- **Origen de datos**: Archivo local `public/articles.json`.
-- **Características**: No depende de la API de Strapi. Se gestiona localmente mediante la edición del archivo JSON en el repositorio. Es un Server Component que lee el disco en tiempo de renderizado.
-
-## 5. Conclusión Final
-El módulo de Blog está **completamente estabilizado**. La arquitectura soporta tanto la gestión editorial dinámica desde Strapi como la visualización de noticias destacadas locales mediante JSON, garantizando rendimiento y redundancia de información.
+## 5. Gestión de Imágenes y Git LFS
+- **Nota Crítica**: Se han identificado archivos de imagen que se cargan como punteros Git LFS (107 bytes) en lugar de binarios reales. Para asegurar la visualización en producción, los archivos en `public/` deben ser cargados como binarios reales o configurar el soporte LFS en el pipeline de despliegue.
 
 ---
-*Documento actualizado - 9 de febrero de 2026.*
+*Documento actualizado - 10 de febrero de 2026 (Documentación de referencia para arquitectura de páginas).*
