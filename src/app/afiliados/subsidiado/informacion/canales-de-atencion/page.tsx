@@ -24,6 +24,11 @@ import {
 import Link from "next/link";
 import React from 'react';
 
+
+const baseUrl = process.env.NODE_ENV === 'production'
+  ? process.env.NEXT_PUBLIC_BASE_URL // Usa variable de entorno si existe
+  : 'http://localhost:3000';
+  
 export const metadata: Metadata = {
   title: 'Canales de atención de Emssanar EPS para ti',
   description: 'Conoce los canales de atención de Emssanar EPS y comunícate fácilmente para gestionar solicitudes, recibir información y atención oportuna.',
