@@ -31,7 +31,7 @@ export const metadata: Metadata = {
     siteName: "Entidad Digital",
     images: [
       {
-        url: '/default-og.jpg',
+        url: '/default-og.webp',
         width: 1200,
         height: 630,
         alt: "Logo de Entidad Digital",
