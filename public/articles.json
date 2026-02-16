@@ -2,7 +2,7 @@
   "articles": [
     {
       "id": 1,
-      "imageUrl": "https://front-901021565-8.vercel.app/_next/image?url=https%3A%2F%2Fnatural-morning-88dae3e00d.media.strapiapp.com%2Fart_habitos_saludables_6b42c5a87f.webp&w=1920&q=75",
+      "imageUrl": "https://natural-morning-88dae3e00d.media.strapiapp.com/art_habitos_saludables_6b42c5a87f.webp",
       "category": "Subsidiado",
       "title": "Hábitos y estilos de vida saludables",
       "description": "Fomentamos la salud a través de la educación y la prevención, promoviendo hábitos saludables y actividad física.",
@@ -12,7 +12,7 @@
     },
     {
       "id": 2,
-      "imageUrl": "https://front-901021565-8.vercel.app/_next/image?url=https%3A%2F%2Fnatural-morning-88dae3e00d.media.strapiapp.com%2Fart_habitos_saludables_6b42c5a87f.webp&w=1920&q=75",
+      "imageUrl": "https://natural-morning-88dae3e00d.media.strapiapp.com/art_habitos_saludables_6b42c5a87f.webp",
       "category": "Contributivo",
       "title": "Novedades en el Régimen Contributivo",
       "description": "Conoce las últimas actualizaciones y beneficios para afiliados al régimen contributivo.",
@@ -22,7 +22,7 @@
     },
     {
       "id": 3,
-      "imageUrl": "https://front-901021565-8.vercel.app/_next/image?url=https%3A%2F%2Fnatural-morning-88dae3e00d.media.strapiapp.com%2Fart_habitos_saludables_6b42c5a87f.webp&w=1920&q=75",
+      "imageUrl": "https://natural-morning-88dae3e00d.media.strapiapp.com/art_habitos_saludables_6b42c5a87f.webp",
       "category": "Prestadores",
       "title": "Guía para nuevos Prestadores de Salud",
       "description": "Información esencial para integrar su institución a nuestra red de prestadores de servicios de salud.",

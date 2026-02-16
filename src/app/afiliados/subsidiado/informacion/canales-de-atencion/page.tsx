@@ -1,5 +1,4 @@
 // src/app/afiliados/subsidiado/informacion/canales-de-atencion/page.tsx
-//og image
 import type { Metadata } from 'next';
 import { Card, CardHeader, CardTitle, CardContent, CardFooter } from "@/components/ui/card";
 import { Badge } from "@/components/ui/badge";
@@ -23,7 +22,9 @@ import {
 } from "lucide-react";
 import Link from "next/link";
 import React from 'react';
+import { ArticleSection } from "@/components/articles/ArticleSection";
 
+const siteUrl = 'https://v01-901021565-8.vercel.app';
   
 export const metadata: Metadata = {
   title: 'Canales de atención de Emssanar EPS para ti',
@@ -32,11 +33,11 @@ export const metadata: Metadata = {
   openGraph: {
     title: 'Canales de atención de Emssanar EPS para ti',
     description: 'Conoce los canales de atención de Emssanar EPS y comunícate fácilmente para gestionar solicitudes, recibir información y atención oportuna.',
-    url: '/afiliados/subsidiado/informacion/canales-de-atencion',
+    url: `${siteUrl}/afiliados/subsidiado/informacion/canales-de-atencion`,
     type: 'website',
     images: [
       {
-        url: '/images/img-sub/canales-atencion-emssanar-eps-img16022026.webp',
+        url: `${siteUrl}/images/img-sub/canales-atencion-emssanar-eps-img16022026.webp`,
         width: 1200,
         height: 630,
         alt: 'Canales de Atención Emssanar EPS',
@@ -47,7 +48,7 @@ export const metadata: Metadata = {
     card: 'summary_large_image',
     title: 'Canales de atención de Emssanar EPS para ti',
     description: 'Conoce los canales de atención de Emssanar EPS y comunícate fácilmente para gestionar solicitudes, recibir información y atención oportuna.',
-    images: ['/images/img-sub/canales-atencion-emssanar-eps-img16022026.webp'],
+    images: [`${siteUrl}/images/img-sub/canales-atencion-emssanar-eps-img16022026.webp`],
   }
 };
 
@@ -70,7 +71,7 @@ export default function CanalesAtencionPage() {
     {
       id: "clara-bot",
       title: "Clara Bot",
-      description: "Información inmediata sobre afiliación y atención, con acompañamiento de agente de contacto cuando lo requieras.",
+      description: "Información inmediata sobre afiliación y atención, con acompañamiento de agente de contacto cuando lo requieras. Disponible las 24 horas del día, los 7 días de la semana.",
       icon: <MessageSquareText className="h-6 w-6" />,
       availability: "Servicio 24/7",
       is247: true,
@@ -78,7 +79,7 @@ export default function CanalesAtencionPage() {
     {
       id: "web",
       title: "Página web",
-      description: "Realiza trámites en línea como radicación de solicitudes, actualización de datos, PQRD, descarga de certificados y portabilidad.",
+      description: "Realiza trámites en línea como radicación de solicitudes, actualización de datos, PQRD, descarga de certificados, registro de portabilidad y gestiones del régimen contributivo, de manera rápida y segura.",
       icon: <Globe className="h-6 w-6" />,
       availability: "Servicio 24/7",
       is247: true,
@@ -87,7 +88,7 @@ export default function CanalesAtencionPage() {
     {
       id: "phones",
       title: "Líneas telefónicas",
-      description: "Línea nacional: 01 8000 930 942 | Línea afiliados: (601) 705 58 37 | Línea COVID-19 y viruela símica: (601) 705 58 36.",
+      description: "Comunícate con nosotros para recibir información, orientación y radicar cualquier tipo de solicitud: Línea nacional: 01 8000 930 942 | Línea afiliados: (601) 705 58 37 | Línea COVID-19 y viruela símica: (601) 705 58 36.",
       icon: <Phone className="h-6 w-6" />,
       availability: "Servicio 24/7",
       is247: true,
@@ -95,7 +96,7 @@ export default function CanalesAtencionPage() {
     {
       id: "email",
       title: "Correo electrónico",
-      description: "Gestiona afiliaciones, traslados, movilidad, portabilidad y actualización de datos a través de afiliate@emssanareps.co.",
+      description: "A través del correo afiliate@emssanareps.co puedes gestionar afiliaciones, traslados, movilidad, portabilidad y actualización de datos, de forma práctica y confiable.",
       icon: <Mail className="h-6 w-6" />,
       availability: "Servicio 24/7",
       is247: true,
@@ -104,7 +105,7 @@ export default function CanalesAtencionPage() {
     {
       id: "app",
       title: "App móvil Emssanar EPS",
-      description: "Accede a actualización de datos, trámites en línea, red de servicios, plan de atención individual y reporte de eventos.",
+      description: "Descarga nuestra aplicación móvil y accede a actualización de datos, trámites en línea, red de servicios, información COVID-19, consulta del plan de atención individual, calificación del servicio y reporte de eventos.",
       icon: <Smartphone className="h-6 w-6" />,
       availability: "Servicio 24/7",
       is247: true,
@@ -113,7 +114,7 @@ export default function CanalesAtencionPage() {
     {
       id: "offices",
       title: "Oficinas de atención",
-      description: "Atención presencial para radicar cualquier tipo de solicitud informativa o de gestión, con acompañamiento personalizado.",
+      description: "Atención presencial para radicar cualquier tipo de solicitud informativa o de gestión, con acompañamiento personalizado. Consulta la ubicación y el horario de atención según tu municipio.",
       icon: <MapPin className="h-6 w-6" />,
       availability: "Horario según municipio",
       is247: false,
@@ -122,7 +123,7 @@ export default function CanalesAtencionPage() {
     {
       id: "sms",
       title: "SMS masivos",
-      description: "Recibe notificaciones sobre radicación de autorizaciones, direccionamientos y comunicaciones informativas importantes.",
+      description: "Recibe notificaciones sobre radicación de autorizaciones, direccionamientos y comunicaciones informativas, manteniéndote al tanto de la gestión de tus solicitudes.",
       icon: <MessageCircle className="h-6 w-6" />,
       availability: "Servicio 24/7",
       is247: true,
@@ -171,7 +172,7 @@ export default function CanalesAtencionPage() {
         <div className="text-center mb-10">
           <h2 className="text-2xl md:text-3xl font-bold mb-4">Canales de atención disponibles para ti</h2>
           <p className="text-muted-foreground max-w-2xl mx-auto">
-            Ponemos a tu disposición canales digitales, telefónicos y presenciales con amplios horarios de disponibilidad y atención especializada.
+            Ponemos a tu disposición canales digitales, telefónicos y presenciales, que te permiten elegir la forma de contacto que mejor se adapte a ti, con amplios horarios de disponibilidad y atención especializada.
           </p>
         </div>
 
@@ -217,7 +218,7 @@ export default function CanalesAtencionPage() {
               Redes sociales
             </h2>
             <p className="text-muted-foreground text-lg">
-              Consulta información, realiza solicitudes y recibe orientación a través de nuestros canales oficiales.
+              Consulta información, realiza solicitudes y recibe orientación a través de nuestros canales oficiales en redes sociales.
             </p>
             <div className="flex flex-wrap gap-4">
               {socialMedia.map((social) => (
@@ -279,6 +280,8 @@ export default function CanalesAtencionPage() {
           </div>
         </div>
       </section>
+
+      <ArticleSection title="Últimas noticias y novedades" />
     </div>
   );
 }
