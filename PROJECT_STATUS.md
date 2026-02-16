@@ -16,8 +16,8 @@ Este documento certifica que el sistema ha sido actualizado siguiendo la documen
 
 ### SEO y Accesibilidad
 - **MetadataBase**: Configurada para producción (`https://front-901021565-8.vercel.app`).
-- **Open Graph**: Implementado con imágenes personalizadas por página para evitar errores 403.
-- **Canales de Atención**: Página institucional completada con imagen y contenido SEO optimizado.
+- **Open Graph**: Implementado con imágenes personalizadas por página.
+- **Resolución de Error 403/Invalid Image**: Se ha identificado que archivos de ~107 bytes son punteros de Git LFS. **Solución:** Asegurar que las imágenes se suban como archivos binarios reales y no mediante LFS si el hosting no lo soporta.
 
 ### Integración con Strapi
 - **Sincronización de Esquema**: El Content-Type `Article` ya soporta `slug` y `keywords`.

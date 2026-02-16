@@ -28,6 +28,10 @@ export const metadata: Metadata = {
   description: 'Conoce los canales de atención de Emssanar EPS y comunícate fácilmente para gestionar solicitudes, recibir información y atención oportuna.',
   keywords: ['Canales de atención', 'Contacto Emssanar EPS', 'Atención al usuario', 'Comunicación EPS', 'Servicios en línea', 'Atención 24/7', 'PQRD', 'Afiliados Emssanar'],
   openGraph: {
+    title: 'Canales de atención de Emssanar EPS para ti',
+    description: 'Conoce los canales de atención de Emssanar EPS y comunícate fácilmente para gestionar solicitudes, recibir información y atención oportuna.',
+    url: '/afiliados/subsidiado/informacion/canales-de-atencion',
+    type: 'website',
     images: [
       {
         url: '/images/img-sub/canales-atencion-emssanar-eps-img16022026.webp',
@@ -36,6 +40,12 @@ export const metadata: Metadata = {
         alt: 'Canales de Atención Emssanar EPS',
       }
     ]
+  },
+  twitter: {
+    card: 'summary_large_image',
+    title: 'Canales de atención de Emssanar EPS para ti',
+    description: 'Conoce los canales de atención de Emssanar EPS y comunícate fácilmente para gestionar solicitudes, recibir información y atención oportuna.',
+    images: ['/images/img-sub/canales-atencion-emssanar-eps-img16022026.webp'],
   }
 };
 
