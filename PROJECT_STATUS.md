@@ -24,8 +24,8 @@ Este documento certifica que el sistema ha sido actualizado siguiendo la documen
 - **Navegación Semántica**: Uso de slugs nativos para SEO.
 
 ## 3. Control de Versiones (Git)
-El proyecto ha sido configurado para sincronizarse con el repositorio de producción:
-`https://github.com/VictorBotina/v01_901021565_8`
+El proyecto ha sido configurado para sincronizarse con el repositorio de producción mediante empuje forzado para resolver discrepancias de historial:
+`git push -f origin main`
 
 ---
 *Documento actualizado - 10 de febrero de 2026 (Sincronización de producción completada).*

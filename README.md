@@ -28,8 +28,8 @@ git commit -m "Sincronización de proyecto con repositorio v01 y mejoras SEO"
 git push -u origin main
 ```
 
-### Resolución de Conflictos (Si el repo ya tiene contenido diferente)
-Si recibes un error al hacer el push porque el historial es diferente, utiliza:
+### Resolución de Conflictos (Si recibes error non-fast-forward)
+Si recibes un error al hacer el push porque el historial es diferente o el remoto tiene archivos que tú no, utiliza el comando de fuerza para sobrescribir el repositorio con tu versión local:
 ```bash
 git push -f origin main
 ```
