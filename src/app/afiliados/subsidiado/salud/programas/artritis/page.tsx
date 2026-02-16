@@ -24,7 +24,7 @@ export const metadata: Metadata = {
   description: 'Informar el programa de salud de Artritis Reumatoide de forma fácil y segura',
   keywords: ['Emssanar EPS', 'Afiliación en salud', 'Régimen subsidiado', 'Prevención en salud', 'Artritis reumatoide', 'cuidado de salud'],
   openGraph: {
-    title: '¿Te duelen las articulaciones todos los días? Podría ser Artritis Reumatoide',
+    title: 'Artritis Reumatoide',
     description: 'Informar el programa de salud de Artritis Reumatoide de forma fácil y segura',
     url: `/afiliados/subsidiado/salud/programas/artritis`,
     type: 'website',
@@ -39,7 +39,7 @@ export const metadata: Metadata = {
   },
   twitter: {
     card: 'summary_large_image',
-    title: '¿Te duelen las articulaciones todos los días? Podría ser Artritis Reumatoide',
+    title: 'Artritis Reumatoide',
     description: 'Informar el programa de salud de Artritis Reumatoide de forma fácil y segura',
     images: [`/images/img-sub/artritis-reumatoide-img16022026.webp`],
   }
