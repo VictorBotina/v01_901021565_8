@@ -78,31 +78,36 @@ export default function TestPage() {
             </motion.div>
 
             {/* Degradado elegante para contraste y profundidad */}
-            <div className="absolute inset-0 bg-gradient-to-t from-black/60 via-black/20 to-transparent opacity-80 transition-opacity duration-500 group-hover:opacity-40" />
+            <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-black/20 to-transparent opacity-90 transition-opacity duration-500 group-hover:opacity-60" />
             
             {/* Capa de brillo dinámico al pasar el cursor */}
             <div className="absolute inset-0 pointer-events-none bg-gradient-to-tr from-white/10 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-700" />
 
-            {/* Contenedor de contenido flotante (opcional) */}
-            <div className="absolute bottom-8 left-8 right-8 flex justify-between items-end">
+            {/* Contenedor de contenido flotante mejorado */}
+            <div className="absolute bottom-0 left-0 right-0 p-8 md:p-12">
               <motion.div
-                initial={{ opacity: 0, x: -20 }}
-                whileInView={{ opacity: 1, x: 0 }}
-                transition={{ delay: 0.4, duration: 0.6 }}
-                className="text-white"
+                initial={{ opacity: 0, y: 20 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                transition={{ delay: 0.4, duration: 0.8, ease: "easeOut" }}
+                className="max-w-3xl"
               >
-                <p className="text-xs uppercase tracking-[0.3em] font-semibold opacity-80 mb-1">Visual Experience</p>
-                <h3 className="text-2xl font-bold">Dynamic Preview</h3>
+                <div className="inline-block px-3 py-1 rounded-full bg-primary/20 backdrop-blur-md border border-white/10 text-white/80 text-[10px] uppercase tracking-[0.2em] font-bold mb-4">
+                  Programa de Salud
+                </div>
+                <h3 className="text-2xl md:text-4xl font-bold text-white leading-tight drop-shadow-lg">
+                  Inflamación, dolor y cansancio: <br className="hidden md:block" />
+                  <span className="text-primary-foreground/90">lo que debes saber sobre la Artritis Reumatoide</span>
+                </h3>
               </motion.div>
             </div>
           </motion.div>
           
           <p className="text-center text-sm text-muted-foreground italic">
-            Pase el cursor sobre la imagen para experimentar el zoom dinámico y la profundidad visual.
+            Visualización optimizada con capas de profundidad y tipografía de alto contraste.
           </p>
         </section>
 
-        {/* Sección de Video Existente */}
+        {/* Sección de Video */}
         <section>
           <Card className="overflow-hidden border-none shadow-xl bg-secondary/30">
             <CardHeader className="text-center pb-2">
