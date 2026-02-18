@@ -35,7 +35,7 @@ import Image from "next/image";
 import { ArticleSection } from "@/components/articles/ArticleSection";
 import { DynamicHeroImage } from "@/components/ui/DynamicHeroImage";
 
-const siteUrl = process.env.NEXT_PUBLIC_SITE_URL || "https://v01-901021565-8.vercel.app";
+
 
 export const metadata: Metadata = {
   title: 'Tu salud, tus derechos y tus deberes: infórmate y actúa | Emssanar EPS',
@@ -44,7 +44,7 @@ export const metadata: Metadata = {
   openGraph: {
     title: 'Tu salud, tus derechos y tus deberes: infórmate y actúa',
     description: 'Conoce tus derechos y deberes como afiliado, acceso a servicios de salud integral y canales de atención confiables.',
-    url: `${siteUrl}/afiliados`,
+    url: `/afiliados`,
     type: 'website',
     images: [
       {
@@ -368,7 +368,7 @@ export default function AfiliadosPage() {
                   </Link>
                 </Button>
                 <Button asChild variant="outline" className="h-auto py-4 justify-start text-left hover:bg-primary/5 hover:border-primary/30 group">
-                  <Link href="/afiliados/subsidiado/informacion/directorio-prestadores" className="flex items-center gap-4 w-full">
+                  <Link href="/afiliados/subsidiado/informacion/prestadores" className="flex items-center gap-4 w-full">
                     <div className="p-2 bg-primary/10 rounded-lg group-hover:bg-primary group-hover:text-white transition-colors"><Stethoscope className="h-5 w-5 text-primary" /></div>
                     <div>
                       <p className="font-bold text-foreground">Consulta tu Red de Servicios</p>
