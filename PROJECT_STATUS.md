@@ -1,6 +1,6 @@
 # Estado Actual del Proyecto - Migración a Next.js 16.1
 
-Este documento certifica que el sistema ha sido actualizado siguiendo la documentación oficial de la rama 16.
+Este documento certifica que el sistema ha sido actualizado siguiendo la documentación oficial de la rama 16 y sirve como guía de referencia para el desarrollo de nuevas secciones.
 
 ## 1. Versiones de Core y Env
 - **Next.js:** `latest` (Rama 16.1).
@@ -15,8 +15,8 @@ Para que el sitio funcione correctamente en el despliegue, deben configurarse la
 | Variable | Uso | Estado |
 | :--- | :--- | :--- |
 | `NEXT_PUBLIC_SITE_URL` | SEO y Open Graph | `https://v01-901021565-8.vercel.app` |
-| `NEXT_PUBLIC_STRAPI_API_URL` | Conexión CMS Strapi | Requerido |
-| `NEXT_PUBLIC_STRAPI_API_TOKEN` | Token de acceso Strapi | Requerido |
+| `NEXT_PUBLIC_STRAPI_API_URL` | Conexión CMS Strapi | Configurado |
+| `NEXT_PUBLIC_STRAPI_API_TOKEN` | Token de acceso Strapi | Configurado |
 | `NEXT_PUBLIC_SUPABASE_URL` | Base de Datos Oficinas | Consumido en `officeService.ts` |
 | `NEXT_PUBLIC_SUPABASE_API_KEY` | Key de acceso Supabase | Consumido en `officeService.ts` |
 
@@ -28,18 +28,47 @@ Para que el sitio funcione correctamente en el despliegue, deben configurarse la
 ### SEO y Accesibilidad (Optimizado)
 - **MetadataBase**: Configurada para producción (`https://v01-901021565-8.vercel.app`).
 - **Open Graph**: Resolución de imágenes corregida para evitar errores 400/403.
-- **Gestión de Imágenes**: Identificación de punteros Git LFS (107 bytes). Se requiere carga de binarios reales para visualización en OG.
+- **Gestión de Imágenes**: Estándar de cabeceras dinámicas (`DynamicHeroImage`) con revelado por scroll.
 
 ### Multimedia y Video
 - **YouTube**: Se utiliza integración **nativa vía `<iframe>`**. No se dependen de paquetes externos adicionales, optimizando el bundle de JavaScript.
 - **Utilidades**: Función `getYoutubeEmbedUrl` implementada en componentes de blog para transformar URLs dinámicamente.
 
-### Integración con Strapi
-- **Sincronización de Esquema**: Soporte nativo para `slug`, `keywords` y `content` dinámico.
+## 4. Guía de Referencia: Estándar Visual y Estructura (Modelo Premium)
 
-## 4. Gestión de Noticias (Arquitectura Híbrida)
-- **Dinámico (Strapi)**: Blog principal y artículos detallados.
-- **Local (JSON)**: Componente `ArticleSection` consume `public/articles.json` para máxima disponibilidad y rendimiento en landings.
+Para agregar nuevas páginas, se debe seguir el estándar implementado en `/afiliados/subsidiado/informacion/canales-de-atencion`:
+
+### A. Metadatos SEO y Open Graph
+Toda página debe exportar un objeto `metadata` para garantizar el posicionamiento:
+```typescript
+export const metadata: Metadata = {
+  title: 'Título Descriptivo',
+  description: 'Resumen optimizado para buscadores.',
+  keywords: ['palabra clave 1', 'palabra clave 2'],
+  openGraph: {
+    title: 'Título Social',
+    description: 'Descripción Social',
+    url: '/ruta-de-la-pagina',
+    images: [{ url: '/ruta-imagen.webp', width: 1200, height: 630 }]
+  }
+};
+```
+
+### B. Cabecera Dinámica (Hero)
+Se debe utilizar el componente `DynamicHeroImage` inmediatamente después del título `H1`.
+- **Frase de apertura**: Es el texto que acompaña a la imagen dentro del componente.
+- **Lógica de Revelado**: El texto aparece suavemente mediante scroll y desaparece cuando la imagen sale del área visible.
+- **Propiedades**: Requiere `src`, `alt` y `title` (donde se asigna la "Frase de apertura").
+
+### C. Estructura de Contenido (UX/UI)
+1. **Header**: Título H1 claro y centralizado.
+2. **Imagen Hero**: Componente `<DynamicHeroImage />`.
+3. **Secciones de Rejilla**: Usar `Card` de ShadCN para agrupar servicios.
+4. **Componentización de Datos**: Almacenar datos repetitivos en constantes y usar `.map()`.
+5. **Llamadas a la Acción (CTA)**: Usar `Button` con variantes coherentes.
+
+### D. Integración de Componentes Híbridos
+- **ArticleSection**: Al final de cada landing importante, incluir `<ArticleSection title="Últimas noticias y novedades" />`.
 
 ---
-*Documento actualizado - 10 de febrero de 2026 (Documentación de multimedia y video).*
+*Documento actualizado - 10 de febrero de 2026 (Documentación de estándar DynamicHeroImage y Frase de Apertura).*
