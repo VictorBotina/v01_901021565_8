@@ -1,4 +1,3 @@
-// src/app/test/page.tsx
 'use client';
 
 import { InfoPopup } from "@/components/ui/popup";
@@ -43,11 +42,6 @@ export default function TestPage() {
         
         {/* Sección de Imagen Dinámica Premium */}
         <section className="space-y-8">
-          <div className="text-center">
-            <h2 className="text-3xl font-bold text-title mb-2">Titulo test</h2>
-            <div className="h-1 w-20 bg-primary mx-auto rounded-full" />
-          </div>
-
           <motion.div 
             initial={{ opacity: 0, scale: 0.95 }}
             whileInView={{ opacity: 1, scale: 1 }}
@@ -78,27 +72,22 @@ export default function TestPage() {
             </motion.div>
 
             {/* Degradado elegante para contraste y profundidad */}
-            <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-black/20 to-transparent opacity-90 transition-opacity duration-500 group-hover:opacity-60" />
+            <div className="absolute inset-0 bg-gradient-to-t from-black/90 via-black/40 to-transparent opacity-90 transition-opacity duration-500 group-hover:opacity-70" />
             
             {/* Capa de brillo dinámico al pasar el cursor */}
             <div className="absolute inset-0 pointer-events-none bg-gradient-to-tr from-white/10 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-700" />
 
-            {/* Contenedor de contenido flotante mejorado */}
-            <div className="absolute bottom-0 left-0 right-0 p-8 md:p-12">
-              <motion.div
+            {/* Contenedor de contenido flotante centrado en la parte inferior */}
+            <div className="absolute bottom-0 left-0 right-0 p-8 md:p-12 text-center">
+              <motion.h2
                 initial={{ opacity: 0, y: 20 }}
                 whileInView={{ opacity: 1, y: 0 }}
                 transition={{ delay: 0.4, duration: 0.8, ease: "easeOut" }}
-                className="max-w-3xl"
+                className="text-2xl md:text-4xl font-bold text-white leading-tight drop-shadow-lg"
               >
-                <div className="inline-block px-3 py-1 rounded-full bg-primary/20 backdrop-blur-md border border-white/10 text-white/80 text-[10px] uppercase tracking-[0.2em] font-bold mb-4">
-                  Programa de Salud
-                </div>
-                <h3 className="text-2xl md:text-4xl font-bold text-white leading-tight drop-shadow-lg">
-                  Inflamación, dolor y cansancio: <br className="hidden md:block" />
-                  <span className="text-primary-foreground/90">lo que debes saber sobre la Artritis Reumatoide</span>
-                </h3>
-              </motion.div>
+                Inflamación, dolor y cansancio: <br className="hidden md:block" />
+                lo que debes saber sobre la Artritis Reumatoide
+              </motion.h2>
             </div>
           </motion.div>
           
