@@ -3,7 +3,7 @@ import { Card, CardHeader, CardTitle, CardContent, CardDescription } from "@/com
 import { Button } from "@/components/ui/button";
 import { Alert, AlertDescription, AlertTitle } from "@/components/ui/alert";
 import { ArticleSection } from "@/components/articles/ArticleSection";
-import Image from "next/image";
+import { DynamicHeroImage } from "@/components/ui/DynamicHeroImage";
 import { 
   Stethoscope, 
   Activity, 
@@ -51,23 +51,16 @@ export default function ArtritisPage() {
       <div className="container mx-auto px-4 py-8 md:py-12">
         {/* Header Section */}
         <header className="mb-12 text-center max-w-4xl mx-auto">
-          <h1 className="text-3xl md:text-5xl font-extrabold tracking-tight text-title mb-6 leading-tight">
+          <h1 className="text-3xl md:text-5xl font-extrabold tracking-tight text-title mb-8 leading-tight">
             ¿Te duelen las articulaciones todos los días? Podría ser Artritis Reumatoide
           </h1>
 
-          <div className="relative w-full aspect-[21/9] md:aspect-[3/1] rounded-2xl overflow-hidden shadow-xl mb-8">
-            <Image 
-              src="/images/img-sub/artritis-reumatoide-img16022026.webp"
-              alt="Cabecera Programa Artritis Reumatoide Emssanar EPS"
-              fill
-              className="object-cover"
-              priority
-            />
-          </div>
-
-          <p className="text-xl md:text-2xl text-primary font-medium italic">
-            "Inflamación, dolor y cansancio: lo que debes saber sobre la Artritis Reumatoide"
-          </p>
+          <DynamicHeroImage 
+            src="/images/img-sub/artritis-reumatoide-img16022026.webp"
+            alt="Cabecera Programa Artritis Reumatoide Emssanar EPS"
+            title="Inflamación, dolor y cansancio: lo que debes saber sobre la Artritis Reumatoide"
+            priority
+          />
         </header>
 
         <main className="max-w-5xl mx-auto space-y-16">

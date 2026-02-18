@@ -1,10 +1,9 @@
 // src/app/afiliados/subsidiado/informacion/canales-de-atencion/page.tsx
-//Base-content
 import type { Metadata } from 'next';
 import { Card, CardHeader, CardTitle, CardContent, CardFooter } from "@/components/ui/card";
 import { Badge } from "@/components/ui/badge";
 import { Button } from "@/components/ui/button";
-import Image from "next/image";
+import { DynamicHeroImage } from "@/components/ui/DynamicHeroImage";
 import { 
   Phone, 
   Globe, 
@@ -25,7 +24,6 @@ import Link from "next/link";
 import React from 'react';
 import { ArticleSection } from "@/components/articles/ArticleSection";
 
-  
 export const metadata: Metadata = {
   title: 'Canales de atención de Emssanar EPS para ti',
   description: 'Conoce los canales de atención de Emssanar EPS y comunícate fácilmente para gestionar solicitudes, recibir información y atención oportuna.',
@@ -40,7 +38,6 @@ export const metadata: Metadata = {
         url: `/images/img-sub/canales-atencion-emssanar-eps-img16022026.webp`,
         width: 1200,
         height: 630,
-        
         alt: 'Canales de Atención Emssanar EPS',
       }
     ]
@@ -142,24 +139,18 @@ export default function CanalesAtencionPage() {
   return (
     <div className="container mx-auto px-4 py-8 md:py-12">
       <header className="mb-12 text-center max-w-4xl mx-auto">
-        <h1 className="text-3xl md:text-4xl font-extrabold tracking-tight text-title mb-6">
+        <h1 className="text-3xl md:text-4xl font-extrabold tracking-tight text-title mb-8">
           Canales de atención de Emssanar EPS para ti
         </h1>
         
-        <div className="relative w-full aspect-[21/9] md:aspect-[3/1] rounded-2xl overflow-hidden shadow-xl mb-8">
-          <Image 
-            src="/images/img-sub/canales-atencion-emssanar-eps-img16022026.webp"
-            alt="Cabecera Canales de Atención Emssanar EPS"
-            fill
-            className="object-cover"
-            priority
-          />
-        </div>
+        <DynamicHeroImage 
+          src="/images/img-sub/canales-atencion-emssanar-eps-img16022026.webp"
+          alt="Cabecera Canales de Atención Emssanar EPS"
+          title="Comunícate con Emssanar EPS cuando lo necesites"
+          priority
+        />
 
-        <p className="text-xl text-primary font-semibold mb-6">
-          Comunícate con Emssanar EPS cuando lo necesites
-        </p>
-        <div className="space-y-4 text-muted-foreground text-lg leading-relaxed">
+        <div className="space-y-4 text-muted-foreground text-lg leading-relaxed mt-8">
           <p>
             En Emssanar EPS trabajamos para brindarte una atención cercana, oportuna y eficiente. Por eso, hemos dispuesto una amplia variedad de canales de atención, diseñados para que puedas comunicarte con nosotros de forma sencilla, segura y acorde a tus necesidades, ya seas usuario del régimen subsidiado o contributivo.
           </p>
