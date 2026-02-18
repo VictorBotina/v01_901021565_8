@@ -1,7 +1,8 @@
 'use client';
 
-import { motion } from 'framer-motion';
+import { motion, useScroll, useInView } from 'framer-motion';
 import Image from 'next/image';
+import { useRef, useState, useEffect } from 'react';
 
 interface DynamicHeroImageProps {
   src: string;
@@ -13,10 +14,43 @@ interface DynamicHeroImageProps {
 /**
  * Componente de cabecera dinámica premium para páginas institucionales.
  * Optimizado para ocupar mayor espacio vertical y garantizar legibilidad.
+ * Incorpora lógica de revelado por scroll: oculto al inicio, aparece al scroll,
+ * y desaparece si sale de la vista del usuario.
  */
 export function DynamicHeroImage({ src, alt, title, priority = false }: DynamicHeroImageProps) {
+  const containerRef = useRef(null);
+  
+  // Detecta si la imagen está en el viewport (al menos el 20%)
+  const isInView = useInView(containerRef, { 
+    amount: 0.2,
+    once: false 
+  });
+  
+  const { scrollY } = useScroll();
+  const [hasScrolled, setHasScrolled] = useState(false);
+
+  useEffect(() => {
+    // Verificación inicial por si la página ya tiene scroll al cargar (ej. refresh)
+    if (scrollY.get() > 10) {
+      setHasScrolled(true);
+    }
+
+    // Suscripción al evento de scroll para activar la aparición
+    const unsubscribe = scrollY.on("change", (latest) => {
+      if (latest > 10) {
+        setHasScrolled(true);
+      } else if (latest <= 5) {
+        // Vuelve al estado oculto si el usuario regresa al tope de la página
+        setHasScrolled(false);
+      }
+    });
+    
+    return () => unsubscribe();
+  }, [scrollY]);
+
   return (
     <motion.div 
+      ref={containerRef}
       initial={{ opacity: 0, y: 20 }}
       animate={{ opacity: 1, y: 0 }}
       transition={{ duration: 0.8, ease: "easeOut" }}
@@ -47,12 +81,19 @@ export function DynamicHeroImage({ src, alt, title, priority = false }: DynamicH
       {/* Degradado profundo optimizado para legibilidad en la parte inferior */}
       <div className="absolute inset-0 bg-gradient-to-t from-black/95 via-black/40 to-transparent opacity-90 transition-opacity duration-500 group-hover:opacity-80" />
       
-      {/* Contenedor de texto centrado en la parte inferior con padding responsivo */}
+      {/* Contenedor de texto con lógica de aparición por scroll y visibilidad */}
       <div className="absolute bottom-0 left-0 right-0 p-6 sm:p-10 md:p-14 text-center">
         <motion.h2
           initial={{ opacity: 0, y: 30 }}
-          animate={{ opacity: 1, y: 0 }}
-          transition={{ delay: 0.3, duration: 0.8, ease: "easeOut" }}
+          animate={{ 
+            opacity: (hasScrolled && isInView) ? 1 : 0,
+            y: (hasScrolled && isInView) ? 0 : 30
+          }}
+          transition={{ 
+            duration: 0.8, 
+            ease: "easeOut",
+            opacity: { duration: 0.5 }
+          }}
           className="text-xl sm:text-2xl md:text-4xl lg:text-5xl font-bold text-white leading-tight drop-shadow-[0_4px_12px_rgba(0,0,0,0.8)] max-w-5xl mx-auto"
         >
           {title}
