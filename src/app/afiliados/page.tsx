@@ -83,21 +83,18 @@ export default function AfiliadosPage() {
   return (
     <div className="bg-background">
       <div className="container mx-auto px-4 py-8 md:py-12">
-        <header className="text-center mb-12">
-          <h1 className="text-3xl md:text-5xl font-extrabold tracking-tight text-title mb-8">
-            Tu salud, tus derechos y tus deberes: infórmate y actúa
-          </h1>
-          
+        <header className="mb-12">
           <DynamicHeroImage 
             src="/images/img-sub/canales-atencion-emssanar-eps-img16022026.webp"
             alt="Derechos y Deberes del Afiliado"
+            mainTitle="Tu salud, tus derechos y tus deberes: infórmate y actúa"
             title="¿Conoces tus derechos como afiliado? Esto es lo que debes saber, aquí te explicamos cuáles son."
             priority
           />
 
           <div className="max-w-4xl mx-auto space-y-6 text-lg text-muted-foreground leading-relaxed text-center mt-8">
             <p>
-              Nuestra misión es garantizar servicios de salud integrales para todos los afiliados, sino que también promueve la responsabilidad y el cuidado de tu salud en conjunto con tu familia. Estamos comprometidos a acompañarte en todo momento, asegurando el acceso y disfrute efectivo de los servicios de salud con criterios de pertinencia e integralidad.
+              Nuestra misión no solo es garantizar servicios de salud integrales para todos los afiliados, sino también promover la responsabilidad y el cuidado de tu salud en conjunto con tu familia. Estamos comprometidos a acompañarte en todo momento, asegurando el acceso y disfrute efectivo de los servicios de salud con criterios de pertinencia e integralidad.
             </p>
             <p>
               El contenido de esta página web está reglamentado por el Ministerio de Salud y Protección Social, de acuerdo con la Resolución 229 de 2020 (que define los lineamientos de la Carta de Derechos y Deberes) y la Resolución 2718 de 2024 (que actualiza los servicios y tecnologías financiados con la UPC). Nuestro objetivo es informarte claramente sobre tus derechos y deberes del afiliado dentro del sistema de salud colombiano.
@@ -149,7 +146,7 @@ export default function AfiliadosPage() {
                 <AccordionTrigger className="hover:no-underline py-6">
                   <div className="flex items-center gap-4 text-left">
                     <div className="p-2 bg-primary/10 rounded-lg">
-                      <Shield className="h-6 w-6 text-primary" />
+                      <Shield className="h-6 w-6 text-primary" aria-hidden="true" />
                     </div>
                     <div>
                       <h3 className="text-xl font-bold text-title">Derechos del Afiliado y del Paciente</h3>
@@ -165,7 +162,7 @@ export default function AfiliadosPage() {
                   <div className="grid md:grid-cols-2 gap-8">
                     <div className="space-y-4">
                       <h4 className="font-bold text-lg flex items-center gap-2 text-primary">
-                        <Activity className="h-5 w-5" />
+                        <Activity className="h-5 w-5" aria-hidden="true" />
                         Acceso, Oportunidad y Calidad
                       </h4>
                       <ul className="space-y-4">
@@ -187,7 +184,7 @@ export default function AfiliadosPage() {
 
                     <div className="space-y-4">
                       <h4 className="font-bold text-lg flex items-center gap-2 text-primary">
-                        <Scale className="h-5 w-5" />
+                        <Scale className="h-5 w-5" aria-hidden="true" />
                         Dignidad y Autonomía
                       </h4>
                       <ul className="space-y-4">
@@ -212,7 +209,7 @@ export default function AfiliadosPage() {
                 <AccordionTrigger className="hover:no-underline py-6">
                   <div className="flex items-center gap-4 text-left">
                     <div className="p-2 bg-accent/10 rounded-lg">
-                      <Users className="h-6 w-6 text-accent" />
+                      <Users className="h-6 w-6 text-accent" aria-hidden="true" />
                     </div>
                     <div>
                       <h3 className="text-xl font-bold text-title">Responsabilidades en el Sistema de Salud</h3>
@@ -224,14 +221,14 @@ export default function AfiliadosPage() {
                   <p className="text-muted-foreground mb-8">Sé corresponsable con tu salud y la sostenibilidad del sistema. Según lo establecido en la ley, los afiliados y pacientes tienen los siguientes deberes:</p>
                   <div className="grid sm:grid-cols-2 gap-4">
                     {[
-                      { title: "Autocuidado", desc: "Propender por su autocuidado, el de su familia y el de su comunidad.", icon: <HeartPulse className="h-5 w-5" /> },
-                      { title: "Seguimiento Médico", desc: "Atender oportunamente las recomendaciones formuladas por el personal de salud y las recibidas en los programas de promoción y prevención.", icon: <Stethoscope className="h-5 w-5" /> },
-                      { title: "Solidaridad", desc: "Actuar de manera solidaria ante las situaciones que pongan en peligro la vida o la salud de las personas.", icon: <HandHelping className="h-5 w-5" /> },
-                      { title: "Respeto", desc: "Respetar al personal responsable de la prestación y administración de los servicios de salud, y a los otros pacientes.", icon: <Users className="h-5 w-5" /> },
-                      { title: "Uso Racional", desc: "Usar adecuada y racionalmente las prestaciones y los recursos ofrecidos por el SGSSS.", icon: <Scale className="h-5 w-5" /> },
-                      { title: "Información Veraz", desc: "Suministrar de manera voluntaria, oportuna y suficiente la información que se requiera para recibir el servicio.", icon: <ClipboardCheck className="h-5 w-5" /> },
-                      { title: "Cumplimiento Normativo", desc: "Cumplir las normas del Sistema General de Seguridad Social en Salud.", icon: <Shield className="h-5 w-5" /> },
-                      { title: "Aportes Económicos", desc: "Contribuir al financiamiento de los gastos que demande la atención, de acuerdo con su capacidad de pago.", icon: <CreditCard className="h-5 w-5" /> }
+                      { title: "Autocuidado", desc: "Propender por su autocuidado, el de su familia y el de su comunidad.", icon: <HeartPulse className="h-5 w-5" aria-hidden="true" /> },
+                      { title: "Seguimiento Médico", desc: "Atender oportunamente las recomendaciones formuladas por el personal de salud y las recibidas en los programas de promoción y prevención.", icon: <Stethoscope className="h-5 w-5" aria-hidden="true" /> },
+                      { title: "Solidaridad", desc: "Actuar de manera solidaria ante las situaciones que pongan en peligro la vida o la salud de las personas.", icon: <HandHelping className="h-5 w-5" aria-hidden="true" /> },
+                      { title: "Respeto", desc: "Respetar al personal responsable de la prestación y administración de los servicios de salud, y a los otros pacientes.", icon: <Users className="h-5 w-5" aria-hidden="true" /> },
+                      { title: "Uso Racional", desc: "Usar adecuada y racionalmente las prestaciones y los recursos ofrecidos por el SGSSS.", icon: <Scale className="h-5 w-5" aria-hidden="true" /> },
+                      { title: "Información Veraz", desc: "Suministrar de manera voluntaria, oportuna y suficiente la información que se requiera para recibir el servicio.", icon: <ClipboardCheck className="h-5 w-5" aria-hidden="true" /> },
+                      { title: "Cumplimiento Normativo", desc: "Cumplir las normas del Sistema General de Seguridad Social en Salud.", icon: <Shield className="h-5 w-5" aria-hidden="true" /> },
+                      { title: "Aportes Económicos", desc: "Contribuir al financiamiento de los gastos que demande la atención, de acuerdo con su capacidad de pago.", icon: <CreditCard className="h-5 w-5" aria-hidden="true" /> }
                     ].map((item, i) => (
                       <div key={i} className="flex gap-4 p-4 rounded-lg bg-muted/30 border border-transparent hover:border-accent/20 transition-colors">
                         <div className="text-accent shrink-0">{item.icon}</div>
@@ -252,7 +249,7 @@ export default function AfiliadosPage() {
             <div className="flex flex-col lg:flex-row gap-12">
               <div className="lg:w-1/3 space-y-6">
                 <div className="p-4 bg-primary text-white rounded-2xl w-fit">
-                  <FileText className="h-10 w-10" />
+                  <FileText className="h-10 w-10" aria-hidden="true" />
                 </div>
                 <h2 className="text-3xl font-bold text-title leading-tight">Plan de Beneficios en Salud (PBS) con cargo a la UPC</h2>
                 <p className="text-primary font-bold">Resolución 2718 de 2024</p>
@@ -271,7 +268,7 @@ export default function AfiliadosPage() {
                 ].map((item, i) => (
                   <Card key={i} className="border-none shadow-none bg-background/50 p-6">
                     <h4 className="font-bold text-title mb-2 flex items-center gap-2">
-                      <CheckCircle className="h-4 w-4 text-primary" />
+                      <CheckCircle className="h-4 w-4 text-primary" aria-hidden="true" />
                       {item.title}
                     </h4>
                     <p className="text-sm text-muted-foreground leading-relaxed">{item.desc}</p>
@@ -304,19 +301,19 @@ export default function AfiliadosPage() {
                     </TableHeader>
                     <TableBody>
                       <TableRow>
-                        <TableCell className="font-medium flex items-center gap-2"><Phone className="h-4 w-4 text-primary" /> Línea Nacional (24/7)</TableCell>
+                        <TableCell className="font-medium flex items-center gap-2"><Phone className="h-4 w-4 text-primary" aria-hidden="true" /> Línea Nacional (24/7)</TableCell>
                         <TableCell>01 8000 930 942</TableCell>
                       </TableRow>
                       <TableRow>
-                        <TableCell className="font-medium flex items-center gap-2"><Phone className="h-4 w-4 text-primary" /> Línea Fija</TableCell>
+                        <TableCell className="font-medium flex items-center gap-2"><Phone className="h-4 w-4 text-primary" aria-hidden="true" /> Línea Fija</TableCell>
                         <TableCell>601 7055837</TableCell>
                       </TableRow>
                       <TableRow>
-                        <TableCell className="font-medium flex items-center gap-2"><MessageSquare className="h-4 w-4 text-green-600" /> WhatsApp</TableCell>
+                        <TableCell className="font-medium flex items-center gap-2"><MessageSquare className="h-4 w-4 text-green-600" aria-hidden="true" /> WhatsApp</TableCell>
                         <TableCell>311 6097426 (Lun-Vie, 7am-5pm)</TableCell>
                       </TableRow>
                       <TableRow>
-                        <TableCell className="font-medium flex items-center gap-2"><Mail className="h-4 w-4 text-primary" /> Correo Electrónico</TableCell>
+                        <TableCell className="font-medium flex items-center gap-2"><Mail className="h-4 w-4 text-primary" aria-hidden="true" /> Correo Electrónico</TableCell>
                         <TableCell>afiliate@emssanareps.co</TableCell>
                       </TableRow>
                     </TableBody>
@@ -327,7 +324,7 @@ export default function AfiliadosPage() {
               <Card className="bg-primary text-primary-foreground border-none shadow-xl">
                 <CardHeader>
                   <CardTitle className="flex items-center gap-2 text-white">
-                    <Building className="h-6 w-6" />
+                    <Building className="h-6 w-6" aria-hidden="true" />
                     Oficinas de Atención
                   </CardTitle>
                 </CardHeader>
@@ -359,7 +356,7 @@ export default function AfiliadosPage() {
               <div className="grid gap-4">
                 <Button asChild variant="outline" className="h-auto py-4 justify-start text-left hover:bg-primary/5 hover:border-primary/30 group">
                   <Link href="https://emssanareps.co" className="flex items-center gap-4 w-full">
-                    <div className="p-2 bg-primary/10 rounded-lg group-hover:bg-primary group-hover:text-white transition-colors"><Globe className="h-5 w-5 text-primary" /></div>
+                    <div className="p-2 bg-primary/10 rounded-lg group-hover:bg-primary group-hover:text-white transition-colors"><Globe className="h-5 w-5 text-primary" aria-hidden="true" /></div>
                     <div>
                       <p className="font-bold text-foreground">Página Web [emssanareps.co]</p>
                       <p className="text-xs text-muted-foreground">Trámites virtuales y asistente ClaraBot.</p>
@@ -368,7 +365,7 @@ export default function AfiliadosPage() {
                 </Button>
                 <Button asChild variant="outline" className="h-auto py-4 justify-start text-left hover:bg-primary/5 hover:border-primary/30 group">
                   <Link href="/afiliados/subsidiado/informacion/prestadores" className="flex items-center gap-4 w-full">
-                    <div className="p-2 bg-primary/10 rounded-lg group-hover:bg-primary group-hover:text-white transition-colors"><Stethoscope className="h-5 w-5 text-primary" /></div>
+                    <div className="p-2 bg-primary/10 rounded-lg group-hover:bg-primary group-hover:text-white transition-colors"><Stethoscope className="h-5 w-5 text-primary" aria-hidden="true" /></div>
                     <div>
                       <p className="font-bold text-foreground">Consulta tu Red de Servicios</p>
                       <p className="text-xs text-muted-foreground">Ubica tu IPS Primaria y Red de Urgencias.</p>
@@ -377,7 +374,7 @@ export default function AfiliadosPage() {
                 </Button>
                 <Button asChild variant="outline" className="h-auto py-4 justify-start text-left hover:bg-primary/5 hover:border-primary/30 group">
                   <Link href="/afiliados/subsidiado/tramites/movilidad" className="flex items-center gap-4 w-full">
-                    <div className="p-2 bg-primary/10 rounded-lg group-hover:bg-primary group-hover:text-white transition-colors"><ExternalLink className="h-5 w-5 text-primary" /></div>
+                    <div className="p-2 bg-primary/10 rounded-lg group-hover:bg-primary group-hover:text-white transition-colors"><ExternalLink className="h-5 w-5 text-primary" aria-hidden="true" /></div>
                     <div>
                       <p className="font-bold text-foreground">Movilidad y Portabilidad</p>
                       <p className="text-xs text-muted-foreground">Gestiona tus traslados y régimen fácilmente.</p>
@@ -390,7 +387,7 @@ export default function AfiliadosPage() {
             <Card className="border-accent/20 bg-accent/5">
               <CardHeader>
                 <CardTitle className="text-2xl flex items-center gap-2 text-title">
-                  <MessageSquare className="h-6 w-6 text-accent" />
+                  <MessageSquare className="h-6 w-6 text-accent" aria-hidden="true" />
                   PQRD y Protección
                 </CardTitle>
                 <CardDescription>Valoramos tu retroalimentación para mejorar continuamente.</CardDescription>
@@ -398,8 +395,8 @@ export default function AfiliadosPage() {
               <CardContent className="space-y-4 text-sm leading-relaxed">
                 <p>Hemos dispuesto canales para la atención de Peticiones, Quejas, Reclamos y Denuncias (PQR) con el compromiso de gestionarlos de manera oportuna:</p>
                 <ul className="space-y-3">
-                  <li className="flex items-start gap-2"><CheckCircle className="h-4 w-4 text-accent mt-0.5 shrink-0" /> Formulario PQR y Chat ClaraBot en la web.</li>
-                  <li className="flex items-start gap-2"><CheckCircle className="h-4 w-4 text-accent mt-0.5 shrink-0" /> Buzones de sugerencias en cada oficina.</li>
+                  <li className="flex items-start gap-2"><CheckCircle className="h-4 w-4 text-accent mt-0.5 shrink-0" aria-hidden="true" /> Formulario PQR y Chat ClaraBot en la web.</li>
+                  <li className="flex items-start gap-2"><CheckCircle className="h-4 w-4 text-accent mt-0.5 shrink-0" aria-hidden="true" /> Buzones de sugerencias en cada oficina.</li>
                 </ul>
                 <div className="p-4 bg-background rounded-xl border border-accent/10 text-xs text-muted-foreground mt-4">
                   <p className="font-bold text-foreground mb-1">Mecanismos de Protección:</p>

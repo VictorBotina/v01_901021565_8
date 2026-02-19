@@ -7,20 +7,18 @@ import { useRef, useState, useEffect } from 'react';
 interface DynamicHeroImageProps {
   src: string;
   alt: string;
-  title: string;
+  title: string; // Frase de apertura dinámica
+  mainTitle?: string; // Título principal fijo (H1)
   priority?: boolean;
 }
 
 /**
  * Componente de cabecera dinámica premium para páginas institucionales.
- * Optimizado para ocupar mayor espacio vertical y garantizar legibilidad.
- * Incorpora lógica de revelado por scroll: oculto al inicio, aparece al scroll,
- * y desaparece si sale de la vista del usuario.
+ * Permite integrar un título principal fijo y una frase de apertura que se revela con el scroll.
  */
-export function DynamicHeroImage({ src, alt, title, priority = false }: DynamicHeroImageProps) {
+export function DynamicHeroImage({ src, alt, title, mainTitle, priority = false }: DynamicHeroImageProps) {
   const containerRef = useRef(null);
   
-  // Detecta si la imagen está en el viewport (al menos el 20%)
   const isInView = useInView(containerRef, { 
     amount: 0.2,
     once: false 
@@ -30,17 +28,14 @@ export function DynamicHeroImage({ src, alt, title, priority = false }: DynamicH
   const [hasScrolled, setHasScrolled] = useState(false);
 
   useEffect(() => {
-    // Verificación inicial por si la página ya tiene scroll al cargar (ej. refresh)
     if (scrollY.get() > 10) {
       setHasScrolled(true);
     }
 
-    // Suscripción al evento de scroll para activar la aparición
     const unsubscribe = scrollY.on("change", (latest) => {
       if (latest > 10) {
         setHasScrolled(true);
       } else if (latest <= 5) {
-        // Vuelve al estado oculto si el usuario regresa al tope de la página
         setHasScrolled(false);
       }
     });
@@ -78,23 +73,32 @@ export function DynamicHeroImage({ src, alt, title, priority = false }: DynamicH
         />
       </motion.div>
 
-      {/* Degradado profundo optimizado para legibilidad en la parte inferior */}
+      {/* Degradado profundo optimizado */}
       <div className="absolute inset-0 bg-gradient-to-t from-black/95 via-black/40 to-transparent opacity-90 transition-opacity duration-500 group-hover:opacity-80" />
       
-      {/* Contenedor de texto con lógica de aparición por scroll y visibilidad */}
-      <div className="absolute bottom-0 left-0 right-0 p-6 sm:p-10 md:p-14 text-center">
+      {/* Contenedor de contenido centralizado */}
+      <div className="absolute inset-0 flex flex-col items-center justify-center p-6 text-center sm:p-10 md:p-14">
+        
+        {/* Título Principal (H1) - Fijo */}
+        {mainTitle && (
+          <h1 className="text-2xl sm:text-3xl md:text-5xl lg:text-6xl font-black text-white leading-tight drop-shadow-[0_4px_12px_rgba(0,0,0,0.8)] max-w-5xl mx-auto mb-4">
+            {mainTitle}
+          </h1>
+        )}
+
+        {/* Frase de apertura - Dinámica y más pequeña */}
         <motion.h2
-          initial={{ opacity: 0, y: 30 }}
+          initial={{ opacity: 0, y: 20 }}
           animate={{ 
             opacity: (hasScrolled && isInView) ? 1 : 0,
-            y: (hasScrolled && isInView) ? 0 : 30
+            y: (hasScrolled && isInView) ? 0 : 20
           }}
           transition={{ 
             duration: 0.8, 
             ease: "easeOut",
             opacity: { duration: 0.5 }
           }}
-          className="text-xl sm:text-2xl md:text-4xl lg:text-5xl font-bold text-white leading-tight drop-shadow-[0_4px_12px_rgba(0,0,0,0.8)] max-w-5xl mx-auto"
+          className="text-sm sm:text-base md:text-xl lg:text-2xl font-medium text-white/90 max-w-3xl mx-auto drop-shadow-[0_2px_8px_rgba(0,0,0,0.8)]"
         >
           {title}
         </motion.h2>
