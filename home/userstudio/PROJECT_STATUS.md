@@ -7,58 +7,73 @@ Este documento certifica que el sistema ha sido actualizado siguiendo la documen
 - **React / React-DOM:** `latest` (React 19+).
 - **TypeScript:** `^5.x`
 - **URL de Producción Oficial:** `https://v01-901021565-8.vercel.app`
+- **Repositorio Oficial:** `https://github.com/VictorBotina/v01_901021565_8`
 
 ## 2. Configuración de Entorno (Producción)
-Variables requeridas en el panel de Vercel para el funcionamiento de servicios dinámicos:
+Para que el sitio funcione correctamente en el despliegue, deben configurarse las siguientes variables en el panel de Vercel:
 
 | Variable | Uso | Estado |
 | :--- | :--- | :--- |
-| `NEXT_PUBLIC_SITE_URL` | SEO y Open Graph (Debe ser `https://v01-901021565-8.vercel.app`) | Configurado |
-| `NEXT_PUBLIC_STRAPI_API_URL` | Conexión CMS Strapi | Requerido |
-| `NEXT_PUBLIC_STRAPI_API_TOKEN` | Token de acceso Strapi | Requerido |
-| `NEXT_PUBLIC_SUPABASE_URL` | Base de Datos Oficinas | Requerido |
-| `NEXT_PUBLIC_SUPABASE_API_KEY` | Key de acceso Supabase | Requerido |
+| `NEXT_PUBLIC_SITE_URL` | SEO y Open Graph | `https://v01-901021565-8.vercel.app` |
+| `NEXT_PUBLIC_STRAPI_API_URL` | Conexión CMS Strapi | Configurado |
+| `NEXT_PUBLIC_STRAPI_API_TOKEN` | Token de acceso Strapi | Configurado |
+| `NEXT_PUBLIC_SUPABASE_URL` | Base de Datos Oficinas | Consumido en `officeService.ts` |
+| `NEXT_PUBLIC_SUPABASE_API_KEY` | Key de acceso Supabase | Consumido en `officeService.ts` |
 
-## 3. Guía de Referencia: Estructura de Páginas (Modelo "Canales de Atención")
-Para agregar nuevas páginas, se debe seguir la estructura probada en `/afiliados/subsidiado/informacion/canales-de-atencion`:
+## 3. Inventario de Mejoras Implementadas
+
+### Seguridad y Credenciales
+- **Variables de Env**: Consumidas dinámicamente mediante `process.env` en Server Actions. No hay llaves hardcoded.
+
+### SEO y Accesibilidad (Optimizado)
+- **MetadataBase**: Configurada para producción (`https://v01-901021565-8.vercel.app`).
+- **Open Graph**: Resolución de imágenes corregida para evitar errores 400/403.
+- **Gestión de Imágenes**: Estándar de cabeceras dinámicas (`DynamicHeroImage`) con revelado por scroll.
+
+### Multimedia y Video
+- **YouTube**: Se utiliza integración **nativa vía `<iframe>`**. No se dependen de paquetes externos adicionales, optimizando el bundle de JavaScript.
+- **Utilidades**: Función `getYoutubeEmbedUrl` implementada en componentes de blog para transformar URLs dinámicamente.
+
+## 4. Guía de Referencia: Estándar Visual y Estructura (Modelo Premium)
+
+Para agregar nuevas páginas, se debe seguir el estándar implementado en `/afiliados`:
 
 ### A. Metadatos SEO y Open Graph
-Toda página debe exportar un objeto `metadata` para garantizar el posicionamiento y la correcta visualización al compartir:
+Toda página debe exportar un objeto `metadata` para garantizar el posicionamiento:
 ```typescript
 export const metadata: Metadata = {
-  title: 'Título Descriptivo y Atractivo',
-  description: 'Resumen de 150-160 caracteres para buscadores.',
+  title: 'Título Descriptivo',
+  description: 'Resumen optimizado para buscadores.',
   keywords: ['palabra clave 1', 'palabra clave 2'],
   openGraph: {
-    title: 'Título para Redes Sociales',
-    description: 'Descripción para Redes Sociales',
+    title: 'Título Social',
+    description: 'Descripción Social',
     url: '/ruta-de-la-pagina',
     images: [{ url: '/ruta-imagen.webp', width: 1200, height: 630 }]
   }
 };
 ```
 
-### B. Gestión de Imágenes
-- **Optimización**: Usar el componente `Image` de `next/image`.
-- **Contenedores**: Envolver la imagen en un `div` con `relative` y `aspect-ratio` para evitar saltos de diseño (CLS).
-- **SEO**: Siempre incluir el atributo `alt` descriptivo.
+### B. Cabecera Dinámica (Hero)
+Se debe utilizar el componente `DynamicHeroImage` inmediatamente después del título `H1`.
+- **Frase de apertura**: Es el texto que acompaña a la imagen dentro del componente.
+- **Lógica de Revelado**: El texto aparece suavemente mediante scroll y desaparece cuando la imagen sale del área visible.
+- **Propiedades**: Requiere `src`, `alt` y `title` (donde se asigna la "Frase de apertura").
 
 ### C. Estructura de Contenido (UX/UI)
-1. **Header**: Título H1 claro, imagen hero opcional y breve introducción.
-2. **Secciones de Rejilla (Grid)**: Usar `Card` de ShadCN para agrupar servicios o ítems repetitivos.
-3. **Componentización de Datos**: Almacenar datos repetitivos (como canales o redes sociales) en constantes/arrays y usar `.map()` para renderizar.
-4. **Llamadas a la Acción (CTA)**: Usar `Button` con variantes `outline` o `default`.
+1. **Header**: Título H1 claro y centralizado.
+2. **Imagen Hero**: Componente `<DynamicHeroImage />`.
+3. **Secciones de Rejilla**: Usar `Card` de ShadCN para agrupar servicios o regímenes.
+4. **Acordeones Interactivos**: Para textos legales extensos (ej. Derechos y Deberes), usar `<Accordion />` para mejorar la legibilidad.
+5. **Componentización de Datos**: Almacenar datos repetitivos en constantes y usar `.map()`.
+6. **Tablas de Contacto**: Usar `<Table />` para canales telefónicos y horarios.
 
-### D. Integración de Componentes Híbridos
-- **ArticleSection**: Al final de cada landing importante, incluir `<ArticleSection title="Título de la Sección" />` para mostrar noticias locales desde `articles.json`.
+### D. Animaciones de Impacto
+Para frases de cierre o llamados a la acción significativos, usar el componente `<AnimatedPhrase />`:
+- **Comportamiento**: Realiza un fade-in suave al entrar en el viewport y permanece visible permanentemente (`once: true`).
 
-## 4. Multimedia y Video (Estándar Nativo)
-- **YouTube**: Se utiliza integración **nativa vía `<iframe>`**. 
-- **Ventaja**: No depende de paquetes externos, optimizando el bundle de JavaScript.
-- **Implementación**: Envolver el iframe en un `div` con `aspect-video` para responsividad.
-
-## 5. Gestión de Imágenes y Git LFS
-- **Nota Crítica**: Se han identificado archivos de imagen que se cargan como punteros Git LFS (107 bytes) en lugar de binarios reales. Para asegurar la visualización en producción, los archivos en `public/` deben ser cargados como binarios reales o configurar el soporte LFS en el pipeline de despliegue.
+### E. Integración de Componentes Híbridos
+- **ArticleSection**: Al final de cada landing importante, incluir `<ArticleSection title="Últimas noticias y novedades" />`.
 
 ---
-*Documento actualizado - 10 de febrero de 2026 (Documentación de referencia para arquitectura de páginas).*
+*Documento actualizado - 10 de febrero de 2026 (Documentación de estándar Premium basado en la página de Afiliados).*
