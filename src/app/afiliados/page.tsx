@@ -9,7 +9,6 @@ import { Card, CardContent, CardHeader, CardTitle, CardDescription, CardFooter }
 import { Table, TableBody, TableCell, TableHead, TableHeader, TableRow } from "@/components/ui/table";
 import { 
   CheckCircle, 
-  Info, 
   Shield, 
   Users, 
   Phone, 
@@ -18,7 +17,6 @@ import {
   Building, 
   ExternalLink,
   FileText,
-  Ambulance,
   HeartPulse,
   Scale,
   HandHelping,
@@ -34,8 +32,9 @@ import React from "react";
 import Image from "next/image";
 import { ArticleSection } from "@/components/articles/ArticleSection";
 import { DynamicHeroImage } from "@/components/ui/DynamicHeroImage";
+import { AnimatedPhrase } from "@/components/ui/AnimatedPhrase";
 
-
+const siteUrl = process.env.NEXT_PUBLIC_SITE_URL || "https://v01-901021565-8.vercel.app";
 
 export const metadata: Metadata = {
   title: 'Tu salud, tus derechos y tus deberes: infórmate y actúa | Emssanar EPS',
@@ -44,11 +43,11 @@ export const metadata: Metadata = {
   openGraph: {
     title: 'Tu salud, tus derechos y tus deberes: infórmate y actúa',
     description: 'Conoce tus derechos y deberes como afiliado, acceso a servicios de salud integral y canales de atención confiables.',
-    url: `/afiliados`,
+    url: `${siteUrl}/afiliados`,
     type: 'website',
     images: [
       {
-        url: `/images/img-sub/derechos-deberes-emssanar-eps-img17022026.webp`,
+        url: `/images/img-sub/canales-atencion-emssanar-eps-img16022026.webp`,
         width: 1200,
         height: 630,
         alt: 'Tu salud, tus derechos y tus deberes: infórmate y actúa',
@@ -59,7 +58,7 @@ export const metadata: Metadata = {
     card: 'summary_large_image',
     title: 'Tu salud, tus derechos y tus deberes: infórmate y actúa',
     description: 'Conoce tus derechos y deberes como afiliado, acceso a servicios de salud integral y canales de atención confiables.',
-    images: [`/images/img-sub/derechos-deberes-emssanar-eps-img17022026.webp`],
+    images: [`/images/img-sub/canales-atencion-emssanar-eps-img16022026.webp`],
   }
 };
 
@@ -90,7 +89,7 @@ export default function AfiliadosPage() {
           </h1>
           
           <DynamicHeroImage 
-            src="/images/img-sub/derechos-deberes-emssanar-eps-img17022026.webp"
+            src="/images/img-sub/canales-atencion-emssanar-eps-img16022026.webp"
             alt="Derechos y Deberes del Afiliado"
             title="¿Conoces tus derechos como afiliado? Esto es lo que debes saber, aquí te explicamos cuáles son."
             priority
@@ -415,11 +414,12 @@ export default function AfiliadosPage() {
             </Card>
           </section>
 
-          {/* Frase de cierre */}
+          {/* Frase de cierre animada */}
           <section className="text-center py-16 border-t border-b bg-muted/30 rounded-3xl">
-            <h2 className="text-3xl md:text-4xl lg:text-5xl font-extrabold text-primary leading-tight max-w-4xl mx-auto">
-              Recuerda, tu salud, tus derechos y tus deberes: infórmate y actúa
-            </h2>
+            <AnimatedPhrase 
+              text="Recuerda, tu salud, tus derechos y tus deberes: infórmate y actúa"
+              className="text-3xl md:text-4xl lg:text-5xl font-extrabold text-primary leading-tight max-w-4xl mx-auto px-4"
+            />
           </section>
 
         </main>
