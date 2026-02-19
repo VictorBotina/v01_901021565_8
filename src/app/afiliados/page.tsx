@@ -46,7 +46,7 @@ export const metadata: Metadata = {
     type: 'website',
     images: [
       {
-        url: `/public/images/img-sub/derechos-deberes-emssanar-eps-img17022026.webp`,
+        url: `/images/img-sub/derechos-deberes-emssanar-eps-img17022026.webp`,
         width: 1200,
         height: 630,
         alt: 'Tu salud, tus derechos y tus deberes: infórmate y actúa',
@@ -57,7 +57,7 @@ export const metadata: Metadata = {
     card: 'summary_large_image',
     title: 'Tu salud, tus derechos y tus deberes: infórmate y actúa',
     description: 'Conoce tus derechos y deberes como afiliado, acceso a servicios de salud integral y canales de atención confiables.',
-    images: [`/public/images/img-sub/derechos-deberes-emssanar-eps-img17022026.webp`],
+    images: [`/images/img-sub/derechos-deberes-emssanar-eps-img17022026.webp`],
   }
 };
 
