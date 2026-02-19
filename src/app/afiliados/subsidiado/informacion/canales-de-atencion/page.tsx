@@ -138,19 +138,16 @@ export default function CanalesAtencionPage() {
 
   return (
     <div className="container mx-auto px-4 py-8 md:py-12">
-      <header className="mb-12 text-center max-w-4xl mx-auto">
-        <h1 className="text-3xl md:text-4xl font-extrabold tracking-tight text-title mb-8">
-          Canales de atención de Emssanar EPS para ti
-        </h1>
-        
+      <header className="mb-12">
         <DynamicHeroImage 
           src="/images/img-sub/canales-atencion-emssanar-eps-img16022026.webp"
           alt="Cabecera Canales de Atención Emssanar EPS"
+          mainTitle="Canales de atención de Emssanar EPS para ti"
           title="Comunícate con Emssanar EPS cuando lo necesites"
           priority
         />
 
-        <div className="space-y-4 text-muted-foreground text-lg leading-relaxed mt-8">
+        <div className="max-w-4xl mx-auto space-y-4 text-muted-foreground text-lg leading-relaxed text-center mt-8">
           <p>
             En Emssanar EPS trabajamos para brindarte una atención cercana, oportuna y eficiente. Por eso, hemos dispuesto una amplia variedad de canales de atención, diseñados para que puedas comunicarte con nosotros de forma sencilla, segura y acorde a tus necesidades, ya seas usuario del régimen subsidiado o contributivo.
           </p>

@@ -32,11 +32,10 @@ Para que el sitio funcione correctamente en el despliegue, deben configurarse la
 
 ### Multimedia y Video
 - **YouTube**: Se utiliza integración **nativa vía `<iframe>`**. No se dependen de paquetes externos adicionales, optimizando el bundle de JavaScript.
-- **Utilidades**: Función `getYoutubeEmbedUrl` implementada en componentes de blog para transformar URLs dinámicamente.
 
 ## 4. Guía de Referencia: Estándar Visual y Estructura (Modelo Premium)
 
-Para agregar nuevas páginas, se debe seguir el estándar implementado en `/afiliados/subsidiado/informacion/canales-de-atencion`:
+Para agregar nuevas páginas, se debe seguir el estándar implementado en `/afiliados`:
 
 ### A. Metadatos SEO y Open Graph
 Toda página debe exportar un objeto `metadata` para garantizar el posicionamiento:
@@ -55,20 +54,19 @@ export const metadata: Metadata = {
 ```
 
 ### B. Cabecera Dinámica (Hero)
-Se debe utilizar el componente `DynamicHeroImage` inmediatamente después del título `H1`.
-- **Frase de apertura**: Es el texto que acompaña a la imagen dentro del componente.
-- **Lógica de Revelado**: El texto aparece suavemente mediante scroll y desaparece cuando la imagen sale del área visible.
-- **Propiedades**: Requiere `src`, `alt` y `title` (donde se asigna la "Frase de apertura").
+Se debe utilizar el componente `DynamicHeroImage`.
+- **Título Principal (mainTitle)**: Se asigna al prop `mainTitle`. Aparece de forma fija (H1) dentro de la imagen.
+- **Frase de apertura (title)**: Se asigna al prop `title`. Es el texto que se revela suavemente mediante scroll.
+- **Lógica de Revelado**: El texto secundario aparece cuando el usuario hace scroll y desaparece cuando la imagen sale del área visible.
 
 ### C. Estructura de Contenido (UX/UI)
-1. **Header**: Título H1 claro y centralizado.
-2. **Imagen Hero**: Componente `<DynamicHeroImage />`.
-3. **Secciones de Rejilla**: Usar `Card` de ShadCN para agrupar servicios.
-4. **Componentización de Datos**: Almacenar datos repetitivos en constantes y usar `.map()`.
-5. **Llamadas a la Acción (CTA)**: Usar `Button` con variantes coherentes.
+1. **Imagen Hero**: Componente `<DynamicHeroImage />` que integra el H1.
+2. **Introducción**: Bloque de texto centralizado para contextualizar al usuario.
+3. **Secciones de Rejilla/Acordeones**: Usar componentes de ShadCN para organizar información densa.
+4. **Llamadas a la Acción (CTA)**: Usar `Button` con variantes coherentes.
 
-### D. Integración de Componentes Híbridos
-- **ArticleSection**: Al final de cada landing importante, incluir `<ArticleSection title="Últimas noticias y novedades" />`.
+### D. Animaciones de Impacto
+Para frases de cierre, usar el componente `<AnimatedPhrase />` con efecto fade-in de una sola ejecución.
 
 ---
-*Documento actualizado - 10 de febrero de 2026 (Documentación de estándar DynamicHeroImage y Frase de Apertura).*
+*Documento actualizado - 10 de febrero de 2026 (Documentación de estándar Hero con H1 integrado).*

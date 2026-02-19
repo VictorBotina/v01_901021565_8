@@ -50,14 +50,11 @@ export default function ArtritisPage() {
     <div className="bg-background">
       <div className="container mx-auto px-4 py-8 md:py-12">
         {/* Header Section */}
-        <header className="mb-12 text-center max-w-4xl mx-auto">
-          <h1 className="text-3xl md:text-5xl font-extrabold tracking-tight text-title mb-8 leading-tight">
-            ¿Te duelen las articulaciones todos los días? Podría ser Artritis Reumatoide
-          </h1>
-
+        <header className="mb-12">
           <DynamicHeroImage 
             src="/images/img-sub/artritis-reumatoide-img16022026.webp"
             alt="Cabecera Programa Artritis Reumatoide Emssanar EPS"
+            mainTitle="¿Te duelen las articulaciones todos los días? Podría ser Artritis Reumatoide"
             title="Inflamación, dolor y cansancio: lo que debes saber sobre la Artritis Reumatoide"
             priority
           />
@@ -66,14 +63,14 @@ export default function ArtritisPage() {
         <main className="max-w-5xl mx-auto space-y-16">
           
           {/* Intro Section */}
-          <section className="space-y-6 text-lg text-muted-foreground leading-relaxed">
+          <section className="space-y-6 text-lg text-muted-foreground leading-relaxed text-center max-w-4xl mx-auto">
             <p>
               Vivir con artritis reumatoide no es simplemente convivir con dolor en las articulaciones. Es enfrentar una enfermedad autoinmune crónica en la que el sistema inmunológico, que normalmente protege al cuerpo, ataca por error las propias articulaciones, generando inflamación persistente.
             </p>
             <p>
               Con el tiempo, esta inflamación puede afectar el movimiento, la energía, la autonomía e incluso la calidad de vida. Pero hay algo importante que debes saber: cuando se detecta y trata a tiempo, es posible controlar la enfermedad, reducir el daño articular y mantener una vida activa y plena.
             </p>
-            <div className="bg-primary/5 border-l-4 border-primary p-6 rounded-r-lg">
+            <div className="bg-primary/5 border-l-4 border-primary p-6 rounded-r-lg text-left">
               <p className="text-foreground font-medium">
                 La información oportuna transforma el pronóstico. El acompañamiento médico hace la diferencia. Y tu compromiso es parte fundamental del proceso.
               </p>
