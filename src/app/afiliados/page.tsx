@@ -34,7 +34,6 @@ import { ArticleSection } from "@/components/articles/ArticleSection";
 import { DynamicHeroImage } from "@/components/ui/DynamicHeroImage";
 import { AnimatedPhrase } from "@/components/ui/AnimatedPhrase";
 
-const siteUrl = process.env.NEXT_PUBLIC_SITE_URL || "https://v01-901021565-8.vercel.app";
 
 export const metadata: Metadata = {
   title: 'Tu salud, tus derechos y tus deberes: infórmate y actúa | Emssanar EPS',
@@ -43,11 +42,11 @@ export const metadata: Metadata = {
   openGraph: {
     title: 'Tu salud, tus derechos y tus deberes: infórmate y actúa',
     description: 'Conoce tus derechos y deberes como afiliado, acceso a servicios de salud integral y canales de atención confiables.',
-    url: `${siteUrl}/afiliados`,
+    url: `/afiliados`,
     type: 'website',
     images: [
       {
-        url: `/images/img-sub/canales-atencion-emssanar-eps-img16022026.webp`,
+        url: `/public/images/img-sub/derechos-deberes-emssanar-eps-img17022026.webp`,
         width: 1200,
         height: 630,
         alt: 'Tu salud, tus derechos y tus deberes: infórmate y actúa',
@@ -58,7 +57,7 @@ export const metadata: Metadata = {
     card: 'summary_large_image',
     title: 'Tu salud, tus derechos y tus deberes: infórmate y actúa',
     description: 'Conoce tus derechos y deberes como afiliado, acceso a servicios de salud integral y canales de atención confiables.',
-    images: [`/images/img-sub/canales-atencion-emssanar-eps-img16022026.webp`],
+    images: [`/public/images/img-sub/derechos-deberes-emssanar-eps-img17022026.webp`],
   }
 };
 
@@ -85,7 +84,7 @@ export default function AfiliadosPage() {
       <div className="container mx-auto px-4 py-8 md:py-12">
         <header className="mb-12">
           <DynamicHeroImage 
-            src="/images/img-sub/canales-atencion-emssanar-eps-img16022026.webp"
+            src="/images/img-sub/derechos-deberes-emssanar-eps-img17022026.webp"
             alt="Derechos y Deberes del Afiliado"
             mainTitle="Tu salud, tus derechos y tus deberes: infórmate y actúa"
             title="¿Conoces tus derechos como afiliado? Esto es lo que debes saber, aquí te explicamos cuáles son."
